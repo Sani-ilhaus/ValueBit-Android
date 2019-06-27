@@ -1,0 +1,33 @@
+profile {
+    .profile-avtar{
+      padding-top: 2em;
+    }
+    .profileBtn{
+      background: #fff;
+      color: #000;
+    }
+    .itemProfile{
+      background: transparent;
+    }
+
+    .profileImageTag{
+      height: -webkit-fill-available;
+      width: -webkit-fill-available;
+    }
+
+    .text-input{
+      color:#fff !important;
+    }
+
+    .text-input::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
+    .labelProfile{
+      color:#fff !important;
+    }
+    .select-text{
+      color:white;
+    }
+}

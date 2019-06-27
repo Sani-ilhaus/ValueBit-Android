@@ -1,0 +1,55 @@
+two-sf {
+    .twosfBtn{
+        border-color: #38bf9a;
+        width: 70%;
+        padding: 0;
+        background: #38bf9a;
+        border-radius: 25px !important;
+        // height: 5rem;
+      }
+
+      .col{
+          padding: 0 !important;
+      }
+
+      .twoPin{
+        border: 1px solid black;
+        margin: 13px 8px;
+        padding: 0;
+        width: calc(100% - 8px - 8px);
+        // border: 4px solid #38bf9a;
+        // color: #fff;
+        background-color: #fff;
+        border-radius: 30px;
+        height: 8vh;
+        margin-bottom: 24px;
+      }
+
+      .cancelBtn{
+        border-color: #fff !important; 
+        background: #ccc;
+        color: #000;
+      }
+    
+      .twoPin{
+        border: 1px solid black;
+        margin: 13px 8px;
+        padding: 0;
+        width: calc(100% - 8px - 8px);
+        // border: 4px solid #38bf9a;
+        // color: #fff;
+        background-color: #fff;
+        border-radius: 30px;
+        height: 8vh;
+        margin-bottom: 24px;
+      }
+
+      .formInput {
+        border: 4px solid #38bf9a;
+        color: #fff;
+        background-color: #fff;
+        border-radius: 30px;
+        height: 8vh;
+        margin-bottom: 24px;
+      }
+}

@@ -1,0 +1,42 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-grid class="profileGrid">
+        <ion-row>
+          <ion-col col-12>
+            <div class="outerDiv">
+              <ion-avatar item-start class="profileImage" *ngIf="auth.userData != null">
+                <span class="editProfile" (click)="UploadProfile()" menuClose="left">
+                  <i class="fa fa-2x fa-pencil"></i>
+                </span>
+                <div *ngIf="auth.userData.user_image !== 'no-image.png' && auth.userData.user_image != null"><img class="menu-profile-img" [src]="appUtils.SanitizeUrl(assetsUrl+'storage/uploads/user_' + auth.userData.user_name + '/'+auth.userData.user_image)" onerror ="this.src='assets/imgs/user.png'"></div>
+                <div *ngIf="auth.userData.user_image == undefined || auth.userData.user_image == 'no-image.png' || auth.userData.user_image == null" ><img class="avtar profileImageTag" src="assets/imgs/user.png"></div>
+              </ion-avatar>
+            </div>
+          </ion-col>
+          <ion-col col-12>
+            <div class="outerDiv">
+              <ion-title text-center>{{loggedInUserName}}</ion-title>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="menuLinks">
+        <button class="menuBtn" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          <ion-icon name="{{p.imgLink}}"></ion-icon>
+          {{p.title}}
+        </button>
+      </div>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

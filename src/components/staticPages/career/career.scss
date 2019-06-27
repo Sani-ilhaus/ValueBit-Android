@@ -1,0 +1,75 @@
+career {
+    .careerTitle{
+        text-align: center;
+    }
+    h2{
+        font-size: 2.2rem !important;
+    }
+    h3{
+        font-size: 1.8rem !important;
+    }
+    h4{
+        color: #bbb !important;
+        font-size: 1.6rem !important;
+    }
+    h5{
+        color: #bbb;
+        font-size: 1.6rem !important;
+    }
+    h1, h2, h3, h4{
+        font-weight: 100;
+    }
+    h2{
+        color: #38bf9a !important;
+    }
+    .col{
+        padding: 0;
+        padding-right: 2px;
+        padding-left: 2px;
+    }
+
+    .button-small-md {
+        font-size: 1.15rem;
+    }
+
+    .careerBtn{
+        // width: 70%;
+        padding: 4px 15px;
+        background: #38bf9a;
+        border-radius: 20px !important;
+        // height: 3rem;
+        border-color: unset;
+      }
+
+      .careerBtn:hover{
+        padding: 4px 15px;
+        background: #38bf9a;
+        border-radius: 20px !important;
+        height: 3rem;
+        border-color: unset;
+      }
+
+    .fixed-content{
+        background: -webkit-radial-gradient(top, rgb(75, 144, 148) 0%, rgb(107, 175, 162) 100%);
+        background: -o-radial-gradient(top, rgb(75, 144, 148) 0%, rgb(107, 175, 162) 100%);
+        background: -ms-radial-gradient(top, rgb(75, 144, 148) 0%, rgb(107, 175, 162) 100%);
+        background: -moz-radial-gradient(top, rgb(75, 144, 148) 0%, rgb(107, 175, 162) 100%);
+        background: radial-gradient(to bottom, rgb(75, 144, 148) 0%, rgb(107, 175, 162) 100%);
+        //background: unset;
+    }
+
+    .insideDivCard{
+        margin-top: -4em;
+    }
+
+    .card-content-career{
+        width: 100%;
+        position: fixed;
+        margin-top: 4em;
+        background-color: #f8f8f8;
+        height: 100%;
+    }
+    .card-md{
+        margin-bottom: 25px;
+    }
+}

@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="navbarApp">BANK DETAILS</ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <span ion-text color="primary" showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <!-- <ion-title text-center>
+        Bank Details
+    </ion-title> -->
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <form [formGroup]="bankDetailsForm">
+                      <!-- {{this.fetchedBankDetails | json}} -->
+                    <ion-item class="formInput">
+                        <ion-label>
+                            <ion-icon class="IonIcon" name="md-person"></ion-icon>
+                        </ion-label>
+                        <ion-input class="bankInput" placeholder="Name as per bank account" [disabled]='!formActive' type="text" formControlName="nameOnBankAccount"></ion-input>
+                    </ion-item>
+                    <div class="errormsg_style" *ngIf="!bankDetailsForm.controls['nameOnBankAccount'].valid && bankDetailsForm.controls['nameOnBankAccount'].touched">please enter name as per bank account</div>
+                    <ion-item class="formInput">
+                        <ion-label>
+                            <i class="fa fa-university"></i>
+                        </ion-label>
+                        <ion-input class="bankInput" placeholder="Bank Name" type="text" [disabled]='!formActive' formControlName="bankName"></ion-input>
+                    </ion-item>
+                    <div class="errormsg_style" *ngIf="!bankDetailsForm.controls['bankName'].valid && bankDetailsForm.controls['bankName'].touched">please enter Your bank name</div>
+                    <ion-item class="formInput">
+                        <ion-label>
+                            <i class="fa fa-comment"></i>
+                        </ion-label>
+                        <ion-input class="bankInput" type="number" placeholder="Account Number" [disabled]='!formActive' formControlName="accountNumber"></ion-input>
+                    </ion-item>
+                    <div class="errormsg_style" *ngIf="!bankDetailsForm.controls['accountNumber'].valid && bankDetailsForm.controls['accountNumber'].touched">please enter valid account no</div>
+                    <ion-item class="formInput">
+                        <ion-label>
+                            <i class="fa fa-align-right"></i>
+                        </ion-label>
+                        <ion-input class="bankInput" type="text" placeholder="IFSC Code" [disabled]='!formActive' formControlName="ifscCode"></ion-input>
+                    </ion-item>
+                    <div class="errormsg_style" *ngIf="!bankDetailsForm.controls['ifscCode'].valid && bankDetailsForm.controls['ifscCode'].touched">please enter valid ifsc code</div>
+                    <ion-item class="formInput">
+                        <ion-label>
+                            <i class="fa fa-edit"></i>
+                        </ion-label>
+                        <ion-input class="bankInput" type="text" placeholder="Swift Code" [disabled]='!formActive' formControlName="swiftCode"></ion-input>
+                    </ion-item>
+                    <div class="errormsg_style" *ngIf="!bankDetailsForm.controls['swiftCode'].valid && bankDetailsForm.controls['swiftCode'].touched">please enter valid swift code</div>
+                    <ion-item class="formInput">
+                        <ion-label>
+                            <ion-icon name="logo-usd"></ion-icon>
+                        </ion-label>
+                        <ion-input class="bankInput" type="text" placeholder="Bank Branch" [disabled]='!formActive' formControlName="bankBranchName"></ion-input>
+                    </ion-item>
+                    <div class="errormsg_style" *ngIf="!bankDetailsForm.controls['bankBranchName'].valid && bankDetailsForm.controls['bankBranchName'].touched">please enter valid bank brach name</div>
+                    <ion-item class="formInput">
+                        <ion-label>
+                            <i class="fa fa-address-book"></i>
+                        </ion-label>
+                        <ion-input class="bankInput" type="text" placeholder="Bank Address" [disabled]='!formActive' formControlName="bankBranchAddress"></ion-input>
+                    </ion-item>
+                    <div class="errormsg_style" *ngIf="!bankDetailsForm.controls['bankBranchAddress'].valid && bankDetailsForm.controls['bankBranchAddress'].touched">please enter valid bank brach address</div>
+                    <div class="outerDiv">
+                        <button class="customBtn" ion-button type="submit" (click)="saveBankDetails(bankDetailsForm.value)" [disabled]="!bankDetailsForm.valid">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <!-- <ion-grid *ngIf='twoStepActive'>
+        <ion-row>
+            <ion-col>
+                <two-sf [sendTo]="componentName"></two-sf>
+            </ion-col>
+        </ion-row>
+    </ion-grid> -->
+</ion-content>

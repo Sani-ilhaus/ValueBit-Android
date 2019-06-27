@@ -1,0 +1,13 @@
+page-introduction {
+    .introSlide {
+        position: relative;
+        top: 25%;
+    }
+    .introSlide h2, .introSlide p{
+        color: #ffffff;
+    }
+    .swiper-pagination-bullet-active {
+        background: #38bf9a;
+    }
+    
+}

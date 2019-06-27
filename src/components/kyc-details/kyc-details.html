@@ -1,0 +1,147 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="navbarApp">KYC DETAILS</ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <span ion-text color="primary" showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-title text-center>
+        <!-- Kyc Details -->
+    </ion-title>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <form [formGroup]="kycDetailsForm">
+                    <ion-card>
+                        <ion-card-content>
+                            <ion-row (click)="uploadDocs('userIdProfFront')">
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.userIdProfFront === '') || (kycDetailsForm.value.userIdProfFront === null)">
+                                    <img class="coinIcon" src="assets/imgs/file.png">
+                                </ion-col>
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.userIdProfFront !== '') && (kycDetailsForm.value.userIdProfFront !== null)">
+                                    <img class="coinIcon" [src]="auth.userImageLink + kycDetailsForm.value.userIdProfFront" onerror ="this.src='assets/imgs/file.png'">
+                                </ion-col>
+                                <ion-col col-9 class="icon-container">
+                                    <ion-item>
+                                        <ion-label>Identity Proof (Front Side)</ion-label>
+                                        <ion-input [disabled]='disableTrue' type="number" formControlName="userIdProfFront"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                    <ion-card>
+                        <ion-card-content>
+                            <ion-row (click)="uploadDocs('userIdProfBack')">
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.userIdProfBack === '') || (kycDetailsForm.value.userIdProfBack === null)">
+                                    <img class="coinIcon" src="assets/imgs/file.png">
+                                </ion-col>
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.userIdProfBack !== '') && (kycDetailsForm.value.userIdProfBack !== null)">
+                                    <img class="coinIcon" [src]="auth.userImageLink + kycDetailsForm.value.userIdProfBack" onerror ="this.src='assets/imgs/file.png'">
+                                </ion-col>
+                                <ion-col col-9 class="icon-container">
+                                    <ion-item>
+                                        <ion-label>Identity Proof(Back Side)</ion-label>
+                                        <ion-input type="number" [disabled]='disableTrue' formControlName="userIdProfBack"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                    <ion-card>
+                        <ion-card-content>
+                            <ion-row (click)="uploadDocs('addProfFront')">
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.addProfFront === '') || (kycDetailsForm.value.addProfFront === null)">
+                                    <img class="coinIcon" src="assets/imgs/file.png">
+                                </ion-col>
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.addProfFront !== '') && (kycDetailsForm.value.addProfFront !== null)">
+                                    <img class="coinIcon" [src]="auth.userImageLink + kycDetailsForm.value.addProfFront" onerror ="this.src='assets/imgs/file.png'">
+                                </ion-col>
+                                <ion-col col-9 class="icon-container">
+                                    <ion-item>
+                                        <ion-label>Address Proof(Front Side)</ion-label>
+                                        <ion-input type="number" [disabled]='disableTrue' formControlName="addProfFront"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                    <ion-card>
+                        <ion-card-content>
+                            <ion-row (click)="uploadDocs('addProfBack')">
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.addProfBack === '') || (kycDetailsForm.value.addProfBack === null)">
+                                    <img class="coinIcon" src="assets/imgs/file.png">
+                                </ion-col>
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.addProfBack !== '') && (kycDetailsForm.value.addProfBack !== null)">
+                                    <img class="coinIcon" [src]="auth.userImageLink + kycDetailsForm.value.addProfBack" onerror ="this.src='assets/imgs/file.png'">
+                                </ion-col>
+                                <ion-col col-9 class="icon-container">
+                                    <ion-item>
+                                        <ion-label>Address Proof(Back Side)</ion-label>
+                                        <ion-input type="number" [disabled]='disableTrue' formControlName="addProfBack"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                    <!-- <ion-card>
+                        <ion-card-content>
+                            <ion-row (click)="uploadDocs('bankProfFront')">
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.bankProfFront === '') || (kycDetailsForm.value.bankProfFront === null)">
+                                    <img class="coinIcon" src="assets/imgs/file.png">
+                                </ion-col>
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.bankProfFront !== '') && (kycDetailsForm.value.bankProfFront !== null)">
+                                    <img class="coinIcon" [src]="auth.userImageLink + kycDetailsForm.value.bankProfFront">
+                                </ion-col>
+                                <ion-col col-9 class="icon-container">
+                                    <ion-item>
+                                        <ion-label>Bank Proof(Front Side)</ion-label>
+                                        <ion-input type="number" [disabled]='disableTrue' formControlName="bankProfFront"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                    <ion-card>
+                        <ion-card-content>
+                            <ion-row (click)="uploadDocs('bankProfBack')">
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.bankProfBack === '') || (kycDetailsForm.value.bankProfBack === null)">
+                                    <img class="coinIcon" src="assets/imgs/file.png">
+                                </ion-col>
+                                <ion-col col-3 class="icon-container" *ngIf="(kycDetailsForm.value.bankProfBack !== '') && (kycDetailsForm.value.bankProfBack !== null)">
+                                    <img class="coinIcon" [src]="auth.userImageLink + kycDetailsForm.value.bankProfBack">
+                                </ion-col>
+                                <ion-col col-9 class="icon-container">
+                                    <ion-item>
+                                        <ion-label>Bank Proof(Back Side)</ion-label>
+                                        <ion-input type="number" [disabled]='disableTrue' formControlName="bankProfBack"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card> -->
+                    <div class="outerDiv">
+                        <button ion-button type="button" class="customBtn" (click)="kycDetailsFromSubmit(kycDetailsForm.value)"  [disabled]="!kycDetailsForm.valid">
+                            Submit
+                        </button>
+                    </div>
+
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <!-- <ion-grid *ngIf='twoStepActive'>
+        <ion-row>
+            <ion-col>
+                <two-sf [sendTo]="componentName"></two-sf>
+            </ion-col>
+        </ion-row>
+    </ion-grid> -->
+</ion-content>

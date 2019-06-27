@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact Us
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>
+          <ion-row>
+            <ion-col col-3>
+              <img style="height: 5rem; float: left; width: 5rem;" src="http://valuebit.lokhittrust.in/public/images/home/star&moon.png">
+            </ion-col>
+            <ion-col>
+              <ion-title>
+                <span style="color: #000">Singapore</span>
+              </ion-title>
+            </ion-col>
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <p>Valuebit International Ventures Pte. Ltd. </p>
+              <p>82 Genting Lane,</p>
+              <p> #02-07, Media Centre,</p>
+              <p>Singapore (349567)</p>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+        <!-- </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card> -->
+        <ion-card-header>
+          <ion-row>
+            <ion-col col-3>
+              <img style="height: 5rem; float: left; width: 5rem;" src="http://valuebit.lokhittrust.in/public/images/home/indian-flag.png">
+            </ion-col>
+            <ion-col>
+              <ion-title>
+                <span style="color: #000">India</span>
+              </ion-title>
+            </ion-col>
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <p>Valuebit It Services Private Limited.</p>
+              <p>A101 Sector 63,</p>
+              <p> Noida,India-201301</p>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <!-- <ion-card-header>
+          <ion-title >
+            <span style="color: #000;  word-wrap: break-word; display:block;">
+              <b>Fill below form to get in touch with us</b>
+            </span>
+          </ion-title>
+        </ion-card-header> -->
+        <p style="text-align: center; padding-top:20px; font-size:17px;"> <b>Fill below form to get in touch with us</b></p>
+        <ion-card-content>
+            <ion-col>
+          <form [formGroup]='contactusform'>
+              <ion-list>
+                <ion-item>
+                  <ion-label floating>Enter First Name</ion-label>
+                  <ion-input  type="text"  formControlName="txtfirstName" name="txtfirstName"></ion-input>
+                </ion-item>
+                <div class="errormsg_style" *ngIf="!contactusform.controls['txtfirstName'].valid && contactusform.controls['txtfirstName'].touched">please enter First name</div>
+                <ion-item>
+                  <ion-label floating>Enter Last Name</ion-label>
+                  <ion-input   type="text" formControlName="txtLastName" name="txtLastName"></ion-input>
+                </ion-item>
+                <div class="errormsg_style" *ngIf="!contactusform.controls['txtLastName'].valid && contactusform.controls['txtLastName'].touched">please enter Last Name</div>
+                <ion-item>
+                  <ion-label floating>Your Email</ion-label>
+                  <ion-input  type="text" formControlName="txtEmail" name="txtEmail"></ion-input>
+                </ion-item>
+                <div class="errormsg_style" *ngIf="!contactusform.controls['txtEmail'].valid && contactusform.controls['txtEmail'].touched">please enter Valid email</div>
+                <ion-item>
+                  <ion-label floating>Phone No.</ion-label>
+                  <ion-input  type="text" formControlName="txtPhone" name="txtPhone"></ion-input>
+                </ion-item>
+                <div class="errormsg_style" *ngIf="!contactusform.controls['txtPhone'].valid && contactusform.controls['txtPhone'].touched">please enter Valid phone no</div>
+                <ion-item>
+                  <ion-label floating>Message</ion-label>
+                  <ion-input  type="text" formControlName="txtMessage" name="txtMessage"></ion-input>
+                </ion-item>
+                <div class="errormsg_style" *ngIf="!contactusform.controls['txtMessage'].valid && contactusform.controls['txtMessage'].touched">please enter your message</div>
+                <div padding>
+                    <button block ion-button (click)="ContactUs(contactusform.value)" [disabled]="!this.contactusform.valid">Submit</button>
+                  </div>
+              </ion-list>
+    
+             </form>
+      </ion-col>
+        </ion-card-content>
+      </ion-card>
+     
+    </ion-row>
+  </ion-grid>
+</ion-content>

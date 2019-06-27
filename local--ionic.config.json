@@ -1,0 +1,11 @@
+{
+  "name": "valuebit",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },"proxies": [{
+    "path": "/api",
+    "proxyUrl": "http://192.168.43.81/laravel/valuebit-new/api/app/"
+  }]
+}

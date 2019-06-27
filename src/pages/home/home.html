@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar class="homeToolbar">
+    <div class="backBtnToolbar" *ngIf="!pinVerification">
+      <ion-icon name="arrow-round-back" class="customBackBtn" float-left (click)="back()"></ion-icon>
+    </div>
+    <div class="restToolbar" *ngIf="!pinVerification">
+      <ion-title *ngIf="login && !forgetPassword && !pinVerification">LOGIN</ion-title>
+      <ion-title *ngIf="signup">REGISTER</ion-title>
+      <ion-title *ngIf="forgetPassword">FORGET PASSWORD</ion-title>
+    </div>
+    <ion-title *ngIf="pinVerification" class="navbarAppHead" style="padding-left:4em">PIN VERIFICATION</ion-title>
+    <ion-buttons *ngIf="pinVerification" end>
+      <button ion-button icon-only (click)="exitApp()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div [hidden]="!login">
+    <login></login>
+  </div>
+  <div [hidden]="!signup">
+    <signup></signup>
+  </div>
+</ion-content>

@@ -1,0 +1,38 @@
+<div *ngIf="cryptoCurrencies != undefined && cryptoCurrencies.length >0">
+  <ion-card class="cardBackground" *ngFor="let data of cryptoCurrencies">
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-2 class="icon-container btc">
+          <img class="" [src]="appUtilsDash.SanitizeUrl(this.pnkServiceDash.AssetsUrl+'storage/uploads/user_null/'+data.curr_image)">
+        </ion-col>
+        <ion-col col-10 text-center>
+          <!-- <ion-row>
+            <ion-col>
+              <div style="text-align:right">{{data.total_balance}}</div>
+            </ion-col>
+          </ion-row> -->
+
+          <ion-row>
+            <ion-col>
+              <div style="text-align: center">{{data.curr_code}}</div>
+            </ion-col>
+            <ion-col>
+              <div style="text-align: left">{{data.available_balance}}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 align-items-center>
+              <button class="sendBtn" ion-button small outline text-center (click)="Goto('send', data)">Send</button>
+              <button class="buyBtn" ion-button small outline text-center (click)="Goto('exchange', data)">Exchange</button>
+              <!-- <button class="sellBtn" ion-button small outline text-center (click)="Goto('sell', data)">Sell</button> -->
+              <button class="sellBtn" ion-button small outline text-center (click)="Goto('receive', data)">Receive</button>
+              <button class="historyBtn" ion-button small outline text-center (click)="Goto('history', data)">History</button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</div>
+<div *ngIf="cryptoCurrencies == undefined || cryptoCurrencies.length ==0" class="nodata"> No data availble.
+</div>

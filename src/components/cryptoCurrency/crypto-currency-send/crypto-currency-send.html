@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="navbarAppHead" style="padding-left:2em">SEND CRYPTOCURRENCY</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-title text-center color="dark" *ngIf="selectedCoin != undefined">
+    <span style="color:#000">Send {{selectedCoin.curr_code}}</span>
+  </ion-title>
+  <ion-label class="label">
+    Wallet Balance : {{selectedCoin.available_balance || 0}}
+  </ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="currencySendForm" (ngSubmit)="SendCurrencyAmount()">
+          <!-- <ion-item class="formInput">
+            <ion-label>
+              <i class="fa fa-address-book"></i>
+            </ion-label>
+            <ion-input placeholder="From BTC Address" [disabled]='!formActive' type="number" formControlName="fromBtcAddress"></ion-input>
+          </ion-item> -->
+          <ion-item class="formInput">
+            <ion-label>
+              <i class="fa fa-address-book"></i>
+            </ion-label>
+            <ion-input placeholder="To BTC Address" [disabled]='!formActive' type="text" formControlName="txtToCurrencyAddress" (keyup)="CalculateMoney()"></ion-input>
+          </ion-item>
+
+          <!-- <ion-label class="label">
+            {{selectedCoin.curr_code}} : Current Rate:{{currentPrice}} ({{general.country}} {{currentPrice * currencySendForm.value.txtCurrencySendAmountCrypto}})
+          </ion-label> -->
+          <ion-item class="formInput">
+            <ion-label>
+              <ion-icon name="send"></ion-icon>
+            </ion-label>
+            <ion-input placeholder="Sending Amount" [disabled]='!formActive' type="number" formControlName="txtCurrencySendAmountCrypto"
+              (keyup)="CalculateMoney()"></ion-input>
+          </ion-item>
+          <ion-label class="label">
+            Commision charge : {{currencySendForm.value.txtFinalCommisionForSend || 0}}
+          </ion-label>
+          <ion-label class="label">
+            Amount to be send : {{currencySendForm.value.txtFinalAmountForSend || 0}}
+          </ion-label>
+          <div class="outerDiv">
+            <button ion-button type="submit" class="customBtn" [hidden]="twoStepActive" [disabled]="!enableBtn">Submit</button>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf='twoStepActive'>
+    <ion-row>
+      <ion-col>
+        <two-sf [sendTo]="sendTo"></two-sf>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

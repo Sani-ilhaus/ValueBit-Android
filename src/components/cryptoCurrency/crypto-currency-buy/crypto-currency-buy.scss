@@ -1,0 +1,35 @@
+crypto-currency-buy {
+    .label{
+        color: #38bf9a;
+        text-align: center;
+    }
+    .btcLimitTag{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .btcLimitTag > ion-chip > ion-label{
+        color: #82a276;
+    }
+
+    .fixed-content{
+        background: unset;
+    }
+
+    .toolbar-title-md{
+        text-align: center;
+    }
+
+    .chip-md-primary, .chip-md .icon-md-primary{
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        border-radius: unset;
+        background-color: #f4fff0;
+        color: #82a276;
+        border: 2px dotted;
+    }
+
+}

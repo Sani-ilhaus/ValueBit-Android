@@ -1,0 +1,294 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="navbarAppHead" style="padding-left:4em">FIAT HISTORY</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="historyData" color="dark">
+    <ion-segment-button value="0" (click)="SelectedTab(0)">
+      SEND
+    </ion-segment-button>
+    <ion-segment-button value="1" (click)="SelectedTab(1)">
+      BUY
+    </ion-segment-button>
+    <ion-segment-button value="2" (click)="SelectedTab(2)">
+      SELL
+    </ion-segment-button>
+    <ion-segment-button value="3" (click)="SelectedTab(3)">
+      RECEIVE
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content style="margin-top:5px">
+  <!-- <ion-title text-center padding>
+ 
+  </ion-title> -->
+  <ion-slides #slider (ionSlideWillChange)="moveButton($event)">
+    <ion-slide>
+      <ion-list *ngIf="historyData == '0'" no-lines no-padding>
+        <!-- <div > -->
+          <ion-card *ngFor='let trans of transactionHistory; let i = index'>
+            <ion-card-content>
+              <ion-row>
+                <ion-col col-3 class="icon-container btc">
+                  <img class="center-img" src="assets/imgs/cryptoicn/btc.png" />
+                </ion-col>
+                <ion-col col-9>
+                  <div class="outerTransaction">
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div style="font-weight:bolder;">Transaction Id: {{trans.id}}</div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div>Date: {{trans.date}}</div>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Amount:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currAmount}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Fee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currFee}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">TFee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currFee}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Net:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currNet}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        <!-- </div> -->
+      </ion-list>
+
+    </ion-slide>
+    <ion-slide>
+      <ion-list *ngIf="historyData == '1'">
+        <div *ngFor='let trans of transactionHistory; let i = index'>
+          <ion-card>
+            <ion-card-content>
+              <ion-row>
+                <ion-col col-3 class="icon-container btc">
+                  <img class="center-img" src="assets/imgs/cryptoicn/btc.png">
+                </ion-col>
+                <ion-col col-9>
+                  <div class="outerTransaction">
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div style="font-weight:bolder;">Transaction Id: {{trans.id}}</div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div>Date: {{trans.date}}</div>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Amount:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currAmount}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Fee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currFee}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">TFee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currFee}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Net:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currNet}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <ion-list *ngIf="historyData == '2'">
+        <div *ngFor='let trans of transactionHistory; let i = index'>
+          <ion-card>
+            <ion-card-content>
+              <ion-row>
+                <ion-col col-3 class="icon-container btc">
+                  <img class="center-img" src="assets/imgs/cryptoicn/btc.png">
+                </ion-col>
+                <ion-col col-9>
+                  <div class="outerTransaction">
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div style="font-weight:bolder;">Transaction Id: {{trans.id}}</div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div>Date: {{trans.date}}</div>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Amount:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currAmount}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Fee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currFee}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">TFee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currFee}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Net:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currNet}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <ion-list *ngIf="historyData == '3'">
+        <div *ngFor='let trans of transactionHistory; let i = index'>
+          <ion-card>
+            <ion-card-content>
+              <ion-row>
+                <ion-col col-3 class="icon-container btc">
+                  <img class="center-img" src="assets/imgs/cryptoicn/btc.png">
+                </ion-col>
+                <ion-col col-9>
+                  <div class="outerTransaction">
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div style="font-weight:bolder;">Transaction Id: {{trans.id}}</div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div>Date: {{trans.date}}</div>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Amount:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currAmount}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Fee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currFee}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">TFee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currFee}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Net:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.currNet}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

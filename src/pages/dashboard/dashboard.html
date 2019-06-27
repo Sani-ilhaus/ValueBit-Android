@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="navbarAppHead">
+            DASHBOARD
+            <!--<span *ngIf="countryData.length != 0"><span *ngFor="let data of countryData">{{data.country_fiat}}</span></span>
+            <ion-icon name="arrow-down" float-right></ion-icon>-->
+            <!-- <ion-icon name="arrow-dropdown" float-right (click)="showRadio()"></ion-icon>
+            <span style="padding-left: 2px; padding-right: 2px;" float-right (click)="showRadio()"><img style="width: 2.2rem;" src = "{{general.countrylink}}{{selectedCountryFlag}}" /></span> -->
+        </ion-title>
+    </ion-navbar>
+    <coin-status></coin-status>
+</ion-header>
+
+<ion-content>
+    <ion-tabs>
+        <ion-tab [root]="wallet" tabTitle="wallet" tabIcon="ios-basket"></ion-tab>
+        <!-- <ion-tab [root]="tabFiatCurrencyPage" tabTitle="FIAT Currency" tabIcon="logo-bitcoin"></ion-tab> -->
+        <ion-tab [root]="tabCryptoCurrencyPage" tabTitle="Trade" tabIcon="logo-usd"></ion-tab>
+    </ion-tabs>
+</ion-content>

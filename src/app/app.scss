@@ -1,0 +1,352 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+$toast_type: success;
+.outerDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.picker-md .picker-wrapper {
+    background-color: #38bf9a;
+    border: 1px solid #38bf9a;
+    color: #fff;
+}
+
+.picker-md .picker-toolbar {
+    background-color: #38bf9a;
+    border: 1px solid #38bf9a;
+    color: #fff;
+}
+
+.picker-md .picker-button,
+.picker-md .picker-button.activated {
+    color: #fff;
+}
+
+.picker-md .picker-prefix,
+.picker-md .picker-suffix,
+.picker-md .picker-opt.picker-opt-selected {
+    color: #fff;
+}
+
+.picker-ios .picker-wrapper {
+    background-color: #38bf9a;
+    border: 1px solid #38bf9a;
+    color: #fff;
+}
+
+.profileImageTag {
+    border-radius: 50%;
+}
+
+.picker-ios .picker-toolbar {
+    background-color: #38bf9a;
+    border: 1px solid #38bf9a;
+    color: #fff;
+}
+
+.picker-ios .picker-button,
+.picker-ios .picker-button.activated {
+    color: #fff;
+}
+
+.picker-ios .picker-prefix,
+.picker-ios .picker-suffix,
+.picker-ios .picker-opt.picker-opt-selected {
+    color: #fff;
+}
+
+.formInput {
+    border: 4px solid #38bf9a;
+    color: #fff;
+    background-color: #fff;
+    border-radius: 30px; // height: 8vh;
+    margin-bottom: 4px;
+}
+
+.customBtn {
+    // width: 70%;
+    padding: 24px 40px;
+    background: #38bf9a;
+    border-radius: 25px !important; // height: 5rem;
+}
+
+.toast-md .toast-message {
+    font-size: 1.9rem;
+    padding: 1.6rem;
+}
+
+.twosfBtn {
+    /*color: #000 !important;*/
+    background-color: #488aff;
+}
+
+.alert-md .alert-wrapper {
+    background-color: #38bf9a;
+}
+
+.alert-md .alert-radio-label {
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.alert-md [aria-checked=true] .alert-radio-label {
+    color: #fff;
+}
+
+.alert-wrapper {
+    min-width: 80% !important;
+}
+
+.alert-md .alert-title {
+    color: #fff;
+}
+
+.alert-md .alert-button {
+    background-color: #488aff;
+    color: #fff;
+}
+
+.alert-md .alert-radio-icon {
+    border-color: #ccc;
+}
+
+.pintwosf {
+    font-size: 3rem;
+    width: 100%;
+    outline: none;
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+    text-align: center;
+    letter-spacing: 2rem;
+    padding: inherit;
+}
+
+.outterMostDiv {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 12vh;
+    width: 12vh;
+}
+
+.ionicLogoOuter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-input ion-input,
+.item-input ion-textarea {
+    color: #000;
+}
+
+.logoHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.logoOuter {
+    padding: 10px;
+    border: 2px solid #b0d0cf;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.profileImage {
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    border: 2px solid #44858f; // padding: 2em;
+}
+
+.menuLinks {
+    height: 100vh;
+    background-color: #fff;
+}
+
+.fixed-content {
+    background-image: url("../assets/imgs/login.png");
+    background-size: cover;
+    /*
+  background: rgb(33,48,81); /* Old browsers 
+  background: -moz-linear-gradient(-45deg, rgba(33,48,81,1) 0%, rgba(34,48,83,1) 4%, rgba(32,46,81,1) 4%, rgba(31,45,80,1) 6%, rgba(35,49,84,1) 7%, rgba(32,47,86,1) 7%, rgba(33,48,87,1) 9%, rgba(38,53,92,1) 10%, rgba(37,51,88,1) 11%, rgba(38,52,91,1) 11%, rgba(33,48,87,1) 11%, rgba(34,52,92,1) 12%, rgba(32,49,92,1) 12%, rgba(33,49,85,1) 13%, rgba(37,53,89,1) 14%, rgba(36,52,88,1) 14%, rgba(29,48,90,1) 14%, rgba(34,53,95,1) 15%, rgba(31,50,92,1) 15%, rgba(32,51,93,1) 15%, rgba(38,57,99,1) 16%, rgba(32,51,93,1) 16%, rgba(33,52,94,1) 19%, rgba(35,54,96,1) 20%, rgba(32,51,93,1) 21%, rgba(38,57,100,1) 22%, rgba(38,57,100,1) 22%, rgba(35,54,97,1) 23%, rgba(36,55,98,1) 23%, rgba(30,52,93,1) 24%, rgba(31,53,94,1) 25%, rgba(29,50,95,1) 25%, rgba(36,57,100,1) 25%, rgba(38,60,101,1) 25%, rgba(26,49,90,1) 26%, rgba(29,54,95,1) 26%, rgba(43,67,115,1) 27%, rgba(35,57,104,1) 27%, rgba(33,56,100,1) 27%, rgba(36,59,101,1) 28%, rgba(33,56,98,1) 28%, rgba(32,57,98,1) 29%, rgba(35,59,105,1) 30%, rgba(39,62,106,1) 30%, rgba(32,55,97,1) 31%, rgba(36,59,100,1) 32%, rgba(30,58,97,1) 32%, rgba(31,58,101,1) 32%, rgba(43,68,124,1) 33%, rgba(43,70,125,1) 33%, rgba(31,59,106,1) 33%, rgba(28,60,101,1) 34%, rgba(23,50,95,1) 34%, rgba(33,60,105,1) 34%, rgba(39,66,111,1) 34%, rgba(31,58,101,1) 35%, rgba(34,62,102,1) 35%, rgba(32,59,102,1) 36%, rgba(28,55,98,1) 36%, rgba(28,55,98,1) 36%, rgba(36,63,108,1) 37%, rgba(32,59,106,1) 37%, rgba(34,56,103,1) 38%, rgba(35,59,105,1) 40%, rgba(27,56,100,1) 41%, rgba(37,64,109,1) 42%, rgba(31,58,103,1) 43%, rgba(34,61,104,1) 43%, rgba(30,57,100,1) 44%, rgba(31,58,101,1) 44%, rgba(40,69,113,1) 45%, rgba(33,62,106,1) 45%, rgba(31,60,104,1) 45%, rgba(40,69,113,1) 46%, rgba(35,64,108,1) 46%, rgba(25,54,98,1) 46%, rgba(35,60,101,1) 46%, rgba(33,58,99,1) 47%, rgba(36,60,104,1) 47%, rgba(36,60,104,1) 47%, rgba(32,56,102,1) 48%, rgba(32,56,102,1) 48%, rgba(35,59,105,1) 48%, rgba(31,60,102,1) 48%, rgba(30,59,101,1) 49%, rgba(38,67,109,1) 49%, rgba(38,67,109,1) 49%, rgba(27,56,98,1) 50%, rgba(33,62,106,1) 50%, rgba(29,58,102,1) 51%, rgba(32,61,105,1) 51%, rgba(31,60,104,1) 52%, rgba(33,62,106,1) 52%, rgba(31,60,104,1) 53%, rgba(36,65,109,1) 53%, rgba(31,59,106,1) 54%, rgba(31,59,106,1) 54%, rgba(36,64,111,1) 55%, rgba(31,60,104,1) 56%, rgba(35,64,108,1) 56%, rgba(34,63,107,1) 57%, rgba(35,63,111,1) 57%, rgba(33,61,109,1) 58%, rgba(34,62,110,1) 59%, rgba(33,62,106,1) 59%, rgba(35,63,110,1) 59%, rgba(34,62,110,1) 60%, rgba(36,64,114,1) 60%, rgba(35,63,111,1) 61%, rgba(35,63,111,1) 62%, rgba(35,66,113,1) 63%, rgba(35,63,113,1) 64%, rgba(36,66,116,1) 65%, rgba(32,64,113,1) 65%, rgba(33,67,115,1) 66%, rgba(35,65,115,1) 66%, rgba(32,64,115,1) 67%, rgba(35,68,121,1) 68%, rgba(44,77,128,1) 68%, rgba(41,74,125,1) 68%, rgba(32,64,111,1) 69%, rgba(30,62,109,1) 69%, rgba(30,62,109,1) 69%, rgba(35,65,117,1) 69%, rgba(32,63,117,1) 70%, rgba(33,68,122,1) 71%, rgba(29,64,118,1) 72%, rgba(33,68,122,1) 73%, rgba(29,64,118,1) 73%, rgba(36,69,122,1) 73%, rgba(36,69,122,1) 73%, rgba(34,67,118,1) 74%, rgba(32,66,114,1) 74%, rgba(31,67,119,1) 75%, rgba(39,75,127,1) 76%, rgba(38,74,124,1) 76%, rgba(33,69,119,1) 76%, rgba(32,68,118,1) 76%, rgba(34,70,120,1) 77%, rgba(31,64,115,1) 77%, rgba(35,68,119,1) 78%, rgba(31,67,119,1) 79%, rgba(34,70,122,1) 79%, rgba(32,68,120,1) 80%, rgba(28,64,116,1) 80%, rgba(33,69,121,1) 81%, rgba(31,67,119,1) 83%, rgba(35,71,123,1) 84%, rgba(28,64,114,1) 84%, rgba(32,68,118,1) 85%, rgba(28,64,114,1) 85%, rgba(34,70,120,1) 86%, rgba(31,67,117,1) 86%, rgba(34,67,118,1) 89%, rgba(29,69,118,1) 91%, rgba(32,69,121,1) 91%, rgba(30,70,121,1) 95%, rgba(35,71,123,1) 97%, rgba(33,69,121,1) 97%, rgba(33,70,122,1) 98%, rgba(30,67,119,1) 99%, rgba(32,68,120,1) 100%); /* FF3.6-15 
+  background: -webkit-linear-gradient(-45deg, rgba(33,48,81,1) 0%,rgba(34,48,83,1) 4%,rgba(32,46,81,1) 4%,rgba(31,45,80,1) 6%,rgba(35,49,84,1) 7%,rgba(32,47,86,1) 7%,rgba(33,48,87,1) 9%,rgba(38,53,92,1) 10%,rgba(37,51,88,1) 11%,rgba(38,52,91,1) 11%,rgba(33,48,87,1) 11%,rgba(34,52,92,1) 12%,rgba(32,49,92,1) 12%,rgba(33,49,85,1) 13%,rgba(37,53,89,1) 14%,rgba(36,52,88,1) 14%,rgba(29,48,90,1) 14%,rgba(34,53,95,1) 15%,rgba(31,50,92,1) 15%,rgba(32,51,93,1) 15%,rgba(38,57,99,1) 16%,rgba(32,51,93,1) 16%,rgba(33,52,94,1) 19%,rgba(35,54,96,1) 20%,rgba(32,51,93,1) 21%,rgba(38,57,100,1) 22%,rgba(38,57,100,1) 22%,rgba(35,54,97,1) 23%,rgba(36,55,98,1) 23%,rgba(30,52,93,1) 24%,rgba(31,53,94,1) 25%,rgba(29,50,95,1) 25%,rgba(36,57,100,1) 25%,rgba(38,60,101,1) 25%,rgba(26,49,90,1) 26%,rgba(29,54,95,1) 26%,rgba(43,67,115,1) 27%,rgba(35,57,104,1) 27%,rgba(33,56,100,1) 27%,rgba(36,59,101,1) 28%,rgba(33,56,98,1) 28%,rgba(32,57,98,1) 29%,rgba(35,59,105,1) 30%,rgba(39,62,106,1) 30%,rgba(32,55,97,1) 31%,rgba(36,59,100,1) 32%,rgba(30,58,97,1) 32%,rgba(31,58,101,1) 32%,rgba(43,68,124,1) 33%,rgba(43,70,125,1) 33%,rgba(31,59,106,1) 33%,rgba(28,60,101,1) 34%,rgba(23,50,95,1) 34%,rgba(33,60,105,1) 34%,rgba(39,66,111,1) 34%,rgba(31,58,101,1) 35%,rgba(34,62,102,1) 35%,rgba(32,59,102,1) 36%,rgba(28,55,98,1) 36%,rgba(28,55,98,1) 36%,rgba(36,63,108,1) 37%,rgba(32,59,106,1) 37%,rgba(34,56,103,1) 38%,rgba(35,59,105,1) 40%,rgba(27,56,100,1) 41%,rgba(37,64,109,1) 42%,rgba(31,58,103,1) 43%,rgba(34,61,104,1) 43%,rgba(30,57,100,1) 44%,rgba(31,58,101,1) 44%,rgba(40,69,113,1) 45%,rgba(33,62,106,1) 45%,rgba(31,60,104,1) 45%,rgba(40,69,113,1) 46%,rgba(35,64,108,1) 46%,rgba(25,54,98,1) 46%,rgba(35,60,101,1) 46%,rgba(33,58,99,1) 47%,rgba(36,60,104,1) 47%,rgba(36,60,104,1) 47%,rgba(32,56,102,1) 48%,rgba(32,56,102,1) 48%,rgba(35,59,105,1) 48%,rgba(31,60,102,1) 48%,rgba(30,59,101,1) 49%,rgba(38,67,109,1) 49%,rgba(38,67,109,1) 49%,rgba(27,56,98,1) 50%,rgba(33,62,106,1) 50%,rgba(29,58,102,1) 51%,rgba(32,61,105,1) 51%,rgba(31,60,104,1) 52%,rgba(33,62,106,1) 52%,rgba(31,60,104,1) 53%,rgba(36,65,109,1) 53%,rgba(31,59,106,1) 54%,rgba(31,59,106,1) 54%,rgba(36,64,111,1) 55%,rgba(31,60,104,1) 56%,rgba(35,64,108,1) 56%,rgba(34,63,107,1) 57%,rgba(35,63,111,1) 57%,rgba(33,61,109,1) 58%,rgba(34,62,110,1) 59%,rgba(33,62,106,1) 59%,rgba(35,63,110,1) 59%,rgba(34,62,110,1) 60%,rgba(36,64,114,1) 60%,rgba(35,63,111,1) 61%,rgba(35,63,111,1) 62%,rgba(35,66,113,1) 63%,rgba(35,63,113,1) 64%,rgba(36,66,116,1) 65%,rgba(32,64,113,1) 65%,rgba(33,67,115,1) 66%,rgba(35,65,115,1) 66%,rgba(32,64,115,1) 67%,rgba(35,68,121,1) 68%,rgba(44,77,128,1) 68%,rgba(41,74,125,1) 68%,rgba(32,64,111,1) 69%,rgba(30,62,109,1) 69%,rgba(30,62,109,1) 69%,rgba(35,65,117,1) 69%,rgba(32,63,117,1) 70%,rgba(33,68,122,1) 71%,rgba(29,64,118,1) 72%,rgba(33,68,122,1) 73%,rgba(29,64,118,1) 73%,rgba(36,69,122,1) 73%,rgba(36,69,122,1) 73%,rgba(34,67,118,1) 74%,rgba(32,66,114,1) 74%,rgba(31,67,119,1) 75%,rgba(39,75,127,1) 76%,rgba(38,74,124,1) 76%,rgba(33,69,119,1) 76%,rgba(32,68,118,1) 76%,rgba(34,70,120,1) 77%,rgba(31,64,115,1) 77%,rgba(35,68,119,1) 78%,rgba(31,67,119,1) 79%,rgba(34,70,122,1) 79%,rgba(32,68,120,1) 80%,rgba(28,64,116,1) 80%,rgba(33,69,121,1) 81%,rgba(31,67,119,1) 83%,rgba(35,71,123,1) 84%,rgba(28,64,114,1) 84%,rgba(32,68,118,1) 85%,rgba(28,64,114,1) 85%,rgba(34,70,120,1) 86%,rgba(31,67,117,1) 86%,rgba(34,67,118,1) 89%,rgba(29,69,118,1) 91%,rgba(32,69,121,1) 91%,rgba(30,70,121,1) 95%,rgba(35,71,123,1) 97%,rgba(33,69,121,1) 97%,rgba(33,70,122,1) 98%,rgba(30,67,119,1) 99%,rgba(32,68,120,1) 100%); /* Chrome10-25,Safari5.1-6 
+  background: linear-gradient(135deg, rgba(33,48,81,1) 0%,rgba(34,48,83,1) 4%,rgba(32,46,81,1) 4%,rgba(31,45,80,1) 6%,rgba(35,49,84,1) 7%,rgba(32,47,86,1) 7%,rgba(33,48,87,1) 9%,rgba(38,53,92,1) 10%,rgba(37,51,88,1) 11%,rgba(38,52,91,1) 11%,rgba(33,48,87,1) 11%,rgba(34,52,92,1) 12%,rgba(32,49,92,1) 12%,rgba(33,49,85,1) 13%,rgba(37,53,89,1) 14%,rgba(36,52,88,1) 14%,rgba(29,48,90,1) 14%,rgba(34,53,95,1) 15%,rgba(31,50,92,1) 15%,rgba(32,51,93,1) 15%,rgba(38,57,99,1) 16%,rgba(32,51,93,1) 16%,rgba(33,52,94,1) 19%,rgba(35,54,96,1) 20%,rgba(32,51,93,1) 21%,rgba(38,57,100,1) 22%,rgba(38,57,100,1) 22%,rgba(35,54,97,1) 23%,rgba(36,55,98,1) 23%,rgba(30,52,93,1) 24%,rgba(31,53,94,1) 25%,rgba(29,50,95,1) 25%,rgba(36,57,100,1) 25%,rgba(38,60,101,1) 25%,rgba(26,49,90,1) 26%,rgba(29,54,95,1) 26%,rgba(43,67,115,1) 27%,rgba(35,57,104,1) 27%,rgba(33,56,100,1) 27%,rgba(36,59,101,1) 28%,rgba(33,56,98,1) 28%,rgba(32,57,98,1) 29%,rgba(35,59,105,1) 30%,rgba(39,62,106,1) 30%,rgba(32,55,97,1) 31%,rgba(36,59,100,1) 32%,rgba(30,58,97,1) 32%,rgba(31,58,101,1) 32%,rgba(43,68,124,1) 33%,rgba(43,70,125,1) 33%,rgba(31,59,106,1) 33%,rgba(28,60,101,1) 34%,rgba(23,50,95,1) 34%,rgba(33,60,105,1) 34%,rgba(39,66,111,1) 34%,rgba(31,58,101,1) 35%,rgba(34,62,102,1) 35%,rgba(32,59,102,1) 36%,rgba(28,55,98,1) 36%,rgba(28,55,98,1) 36%,rgba(36,63,108,1) 37%,rgba(32,59,106,1) 37%,rgba(34,56,103,1) 38%,rgba(35,59,105,1) 40%,rgba(27,56,100,1) 41%,rgba(37,64,109,1) 42%,rgba(31,58,103,1) 43%,rgba(34,61,104,1) 43%,rgba(30,57,100,1) 44%,rgba(31,58,101,1) 44%,rgba(40,69,113,1) 45%,rgba(33,62,106,1) 45%,rgba(31,60,104,1) 45%,rgba(40,69,113,1) 46%,rgba(35,64,108,1) 46%,rgba(25,54,98,1) 46%,rgba(35,60,101,1) 46%,rgba(33,58,99,1) 47%,rgba(36,60,104,1) 47%,rgba(36,60,104,1) 47%,rgba(32,56,102,1) 48%,rgba(32,56,102,1) 48%,rgba(35,59,105,1) 48%,rgba(31,60,102,1) 48%,rgba(30,59,101,1) 49%,rgba(38,67,109,1) 49%,rgba(38,67,109,1) 49%,rgba(27,56,98,1) 50%,rgba(33,62,106,1) 50%,rgba(29,58,102,1) 51%,rgba(32,61,105,1) 51%,rgba(31,60,104,1) 52%,rgba(33,62,106,1) 52%,rgba(31,60,104,1) 53%,rgba(36,65,109,1) 53%,rgba(31,59,106,1) 54%,rgba(31,59,106,1) 54%,rgba(36,64,111,1) 55%,rgba(31,60,104,1) 56%,rgba(35,64,108,1) 56%,rgba(34,63,107,1) 57%,rgba(35,63,111,1) 57%,rgba(33,61,109,1) 58%,rgba(34,62,110,1) 59%,rgba(33,62,106,1) 59%,rgba(35,63,110,1) 59%,rgba(34,62,110,1) 60%,rgba(36,64,114,1) 60%,rgba(35,63,111,1) 61%,rgba(35,63,111,1) 62%,rgba(35,66,113,1) 63%,rgba(35,63,113,1) 64%,rgba(36,66,116,1) 65%,rgba(32,64,113,1) 65%,rgba(33,67,115,1) 66%,rgba(35,65,115,1) 66%,rgba(32,64,115,1) 67%,rgba(35,68,121,1) 68%,rgba(44,77,128,1) 68%,rgba(41,74,125,1) 68%,rgba(32,64,111,1) 69%,rgba(30,62,109,1) 69%,rgba(30,62,109,1) 69%,rgba(35,65,117,1) 69%,rgba(32,63,117,1) 70%,rgba(33,68,122,1) 71%,rgba(29,64,118,1) 72%,rgba(33,68,122,1) 73%,rgba(29,64,118,1) 73%,rgba(36,69,122,1) 73%,rgba(36,69,122,1) 73%,rgba(34,67,118,1) 74%,rgba(32,66,114,1) 74%,rgba(31,67,119,1) 75%,rgba(39,75,127,1) 76%,rgba(38,74,124,1) 76%,rgba(33,69,119,1) 76%,rgba(32,68,118,1) 76%,rgba(34,70,120,1) 77%,rgba(31,64,115,1) 77%,rgba(35,68,119,1) 78%,rgba(31,67,119,1) 79%,rgba(34,70,122,1) 79%,rgba(32,68,120,1) 80%,rgba(28,64,116,1) 80%,rgba(33,69,121,1) 81%,rgba(31,67,119,1) 83%,rgba(35,71,123,1) 84%,rgba(28,64,114,1) 84%,rgba(32,68,118,1) 85%,rgba(28,64,114,1) 85%,rgba(34,70,120,1) 86%,rgba(31,67,117,1) 86%,rgba(34,67,118,1) 89%,rgba(29,69,118,1) 91%,rgba(32,69,121,1) 91%,rgba(30,70,121,1) 95%,rgba(35,71,123,1) 97%,rgba(33,69,121,1) 97%,rgba(33,70,122,1) 98%,rgba(30,67,119,1) 99%,rgba(32,68,120,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#213051', endColorstr='#204478',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    //background-image: url("../assets/imgs/valueBitBackGround.png");
+    /*-webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);*/
+}
+
+.toolbar-background-md {
+    background-color: #38bf9a;
+}
+
+.modal-wrapper {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/*.modal-wrapper > fiat-deposit {
+  width: 50%;
+  height: 20%;
+  top: 0;
+  left: 0;
+}*/
+
+.navbarApp {
+    text-align: center;
+    padding-right: 2em;
+}
+
+.navbarAppHead {
+    text-align: center;
+}
+
+.toolbar-title-md {
+    color: #fff;
+}
+
+.bar-button-default-md,
+.bar-button-clear-md-default,
+.bar-button-md-default {
+    color: #fff;
+}
+
+.menuBtn {
+    // background-image: url(../assets/imgs/login.png);
+    // color: #fff;
+    color: #38bf9a;
+}
+
+.menuBtn:focus {
+    color: #38bf9a;
+}
+
+.avtar {
+    // height:15vh;
+}
+
+.item-md {
+    //font-size: 1.2rem;
+}
+
+.item-ios {
+    font-size: 1.2rem;
+}
+
+profileGrid {
+    background-image: url(../assets/imgs/login.png);
+}
+
+.editProfile {
+    background: #38bf9a;
+    color: #fff;
+    display: flex;
+    border: 1px solid #38bf9a !important;
+    border-radius: 50%;
+    width: 2.4em;
+    position: relative;
+    top: 0em;
+    right: -6em;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+.avtar {
+    top: -2em;
+    position: relative;
+}
+
+.button-outline-md {
+    color: #fff;
+}
+
+.error {
+    >div {
+        font: bolder;
+        background: #e60300 !important;
+        font-size: 1.6rem;
+    }
+}
+
+.toolbar-title-md {
+    /*text-align: center;
+  padding-right: 7rem;*/
+}
+
+.success {
+    >div {
+        font: bolder;
+        background: #0aad00 !important;
+        font-size: 1.6rem;
+    }
+}
+
+.no-data-text {
+    color: #fff;
+}
+
+.center-img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+ion-slide {
+    .slide-zoom {
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+.menu-profile-img {
+    position: relative;
+    top: -30px;
+    border-radius: 50%;
+    height: 107px;
+    width: 107px;
+    margin: auto;
+}
+.select-text{
+    color:#000;
+}
+.button-outline-md-valuebitcolor{
+    color:#38bf9a;
+}
+.centerItem{
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%)
+}

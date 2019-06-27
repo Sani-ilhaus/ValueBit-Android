@@ -1,0 +1,49 @@
+<ion-list>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <form [formGroup]="twoSFForm" (ngSubmit)="twoSF()">
+                    <ion-row>
+                        <ion-col>
+                            <ion-row>
+                                <input type="number" pattern="^[1-9][0-9]*$" formControlName="txtTwoFactorAuthenticatorCode" [disabled]="inpComp" class="pintwosf twoPin"
+                                    maxlength="4" placeholder="xxxxxx" #twopin id="twopin" autofocus/>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col class="loginBtnGrid">
+                                    <button style="float:right" ion-button round outline full class="twosfBtn" [disabled]="!this.twoSFForm.valid">VERIFY &nbsp;
+                                        <ion-icon name="md-checkmark"></ion-icon>
+                                    </button>
+                                    <!--button ion-button round outline type="button" (click)="signup()">Sign up</button -->
+                                </ion-col>
+                                <ion-col class="loginBtnGrid">
+                                    <button style="float:left" ion-button round outline full class="twosfBtn cancelBtn" (click)="dismiss()">CANCEL &nbsp;
+                                        <ion-icon name="md-close"></ion-icon>
+                                    </button>
+                                    <!--button ion-button round outline type="button" (click)="signup()">Sign up</button -->
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <!-- <input  autofocus/> -->
+                    <!--<ion-item class="formInput">
+                        <ion-label color="primary" floating>
+                            <ion-icon name="md-key"></ion-icon>
+                            Password
+                        </ion-label>
+                        <ion-input type={{passwordType}}
+                                   formControlName="txtTwoFactorAuthenticatorCode"></ion-input>
+                    </ion-item>-->
+                    <!-- <ion-grid>
+                        <ion-row>
+                            <ion-col>
+                                <button class="twosfBtn" ion-button round outline [disabled]="!twoSFForm.valid">Verify</button>
+                                <button class="twosfBtn" ion-button round outline type="button" (click)="exitApp()">Cancel</button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid> -->
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-list>

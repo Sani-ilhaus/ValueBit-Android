@@ -1,0 +1,91 @@
+crypto-currency-dashboard {
+    .nodata {
+        color: #38bf9a;
+        text-align: center;
+        position: relative;
+        top: 50%;
+        font-size: 20px;
+    }
+    .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } // .btc{
+    //     background-color: #FF6107;
+    //     color: #FF6107;
+    //     border-color: #FF6107; 
+    // }
+    // .dash{
+    //     background-color: #5EA6FF;
+    // }
+    // .doge{
+    //     background-color: #3FB38D;
+    // }
+    // .eth{
+    //     background-color: #5EA6FF;
+    // }
+    // .ltc{
+    //     background-color: #3FB38D;
+    // }
+    .button-outline-md {
+        border-color: unset;
+    }
+    .button-outline-ios {
+        border-color: unset;
+    }
+    .btcbtn {
+        color: #FF6107;
+        border-color: #FF6107;
+    }
+    .dashbtn {
+        color: #5EA6FF;
+        border-color: #5EA6FF;
+    }
+    .dogebtn {
+        color: #3FB38D;
+        border-color: #3FB38D;
+    }
+    .ethbtn {
+        color: #5EA6FF;
+        border-color: #5EA6FF;
+    }
+    .ltcbtn {
+        color: #3FB38D;
+        border-color: #3FB38D;
+    }
+    .card-content-md {
+        padding: unset;
+    }
+    .cardBackground {
+        background-color: #f5f5f5;
+        border-radius: 0.7em;
+    }
+    .sendBtn {
+        border-color: #e1e1e1;
+        border-radius: 3rem;
+        color: #000;
+        background-color: #fff;
+        padding: 10px !important;
+    }
+    .buyBtn {
+        border-color: #ebebeb;
+        border-radius: 3rem;
+        color: #000;
+        background-color: #ebebeb;
+        padding: 10px !important;
+    }
+    .sellBtn {
+        border-color: #57a24a;
+        border-radius: 3rem;
+        color: #fff;
+        background-color: #57a24a;
+        padding: 10px !important;
+    }
+    .historyBtn {
+        border-color: #f0ad4e;
+        border-radius: 3rem;
+        color: #fff;
+        background-color: #f0ad4e;
+        padding: 10px !important;
+    }
+}

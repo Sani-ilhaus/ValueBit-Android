@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center style="margin-right: 4em;">PROFILE</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <!--<ion-grid>
+    <ion-row>
+      <div class="outerDiv profile-avtar" *ngIf="auth.userprofiledata != null">
+        <ion-avatar item-start class="profileImage" (click)="uploadDocs()" *ngIf="auth.userData.user_image == 'no-image.png' || auth.userData.user_image == null">
+          <img class="" style="border-radius: 50%;" src="assets/imgs/user.png">
+        </ion-avatar>
+        <ion-avatar item-start class="profileImage" (click)="uploadDocs()" *ngIf="auth.userprofiledata.user_image !== 'no-image.png' && auth.userData.user_image != null">
+          <img class="profileImageTag" src="{{auth.userImageLink}}/{{userProfile.value.fupUserProfile}}">
+        </ion-avatar>
+      </div>
+    </ion-row>
+  </ion-grid>-->
+  <ion-grid *ngIf="auth.userprofiledata != undefined">
+    <ion-row>
+      <ion-col>
+        <form [formGroup]='userProfile'>
+          <ion-item class="itemProfile">
+            <ion-label floating class="labelProfile">Email</ion-label>
+            <ion-input name="Email" formControlName="Email" [disabled]="true"></ion-input>
+          </ion-item>
+          <ion-item class="itemProfile">
+            <ion-label floating class="labelProfile">First Name</ion-label>
+            <ion-input formControlName='txtUserFirstName' name="txtUserFirstName"></ion-input>
+          </ion-item>
+          <ion-item class="itemProfile">
+            <ion-label floating class="labelProfile">Last Name</ion-label>
+            <ion-input formControlName='txtUserLastName' name="txtUserLastName"></ion-input>
+          </ion-item>
+          <ion-item class="itemProfile">
+            <ion-label floating class="labelProfile">DOB(DD/MM/YYYY)</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" formControlName='txtUserDob' [style.color]="'white'" name="txtUserDob" cancelText="Cancel" doneText="OK"></ion-datetime>
+          </ion-item>
+          <ion-item class="itemProfile">
+            <ion-label floating class="labelProfile">Gender</ion-label>
+            <!-- <ion-input formControlName='txtUserGender' name="txtUserGender"></ion-input> -->
+            <ion-select formControlName='txtUserGender'  name="txtUserGender">
+              <ion-option [value]="male" [selected] ="auth.userprofiledata.user_gender === 'male'">Male</ion-option>
+              <ion-option [value]="female" [selected] ="auth.userprofiledata.user_gender === 'female'">Female</ion-option>
+            </ion-select>
+            
+          </ion-item>
+          <ion-item class="itemProfile">
+            <ion-label floating class="labelProfile">Phone Number</ion-label>
+            <ion-input formControlName='numUserPhone' type="number" name="numUserPhone"></ion-input>
+          </ion-item>
+          <ion-item class="itemProfile">
+            <ion-label floating class="labelProfile">Address</ion-label>
+            <ion-input formControlName='txtUserAddress' name="txtUserAddress"></ion-input>
+          </ion-item>
+          <ion-item class="itemProfile">
+            <ion-label floating class="labelProfile">Postal Code</ion-label>
+            <ion-input formControlName='numUserPostalCode' type="number" name="numUserPostalCode"></ion-input>
+          </ion-item>
+          <ion-item class="itemProfile">
+              <ion-label floating class="labelProfile">State</ion-label>
+              <ion-input formControlName='txtUserState' name="txtUserState"></ion-input>
+            </ion-item>
+          <ion-item class="itemProfile">
+
+            <ion-label floating class="labelProfile">Country</ion-label>
+            <!-- <ion-input formControlName='ddlUserCountry'  name="ddlUserCountry"  (click)="showallcountry()"></ion-input> -->
+            <!-- <ion-select formControlName='ddlUserCountry'>
+                            <ion-option  value="f">femal</ion-option>
+                            <ion-option value="m">Male</ion-option>
+                          </ion-select> -->
+            <ion-select formControlName='ddlUserCountry'  name="ddlUserCountry">
+              <ng-container *ngFor="let country of countryData; let ind = index;">
+                <ion-option [value]="country.country_id" [selected]="country.country_id == auth.userprofiledata.country_id">
+                  {{country.country_name}}
+                </ion-option>
+              </ng-container>
+            </ion-select>
+
+
+          </ion-item>
+
+
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="outerDiv">
+          <button type="button" (click)="profileUpdateForm(userProfile.value)" ion-button round outline class="customBtn profileBtn">Submit</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

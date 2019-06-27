@@ -1,0 +1,30 @@
+page-entrypage {
+    .entryGrid{
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        padding-right: 6%;
+        padding-left: 6%;
+
+    }
+
+    .loginBtn{
+        height: 8vh;
+        background: #38bf9a;
+        border-radius: -1% !important;
+    }
+    .loginBtnGrid{
+        padding: 0;
+    }
+    .entryRowBtn{
+        width: 100%;
+        padding: 2%;
+    }
+    .registerBtn{
+        padding: 0;
+        height: 8vh;
+        border-radius: -1% !important;
+        background: #fff;
+        color: #000;
+    }
+}

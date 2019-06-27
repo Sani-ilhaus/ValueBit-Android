@@ -1,0 +1,27 @@
+<ion-content class="modalIonContet">
+  <div class="outterMostDiv">
+    <ion-card class="modalCard">
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-title>{{modalData}}</ion-title>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col *ngIf="twostepStatus == 'disabled'">
+                  <button ion-button round outline type="button" (click)="changeStatus('disabled')">Enable</button>
+                  <button ion-button round outline type="button" (click)="dismiss()">Close</button>
+              </ion-col>
+              <ion-col *ngIf="twostepStatus == 'enabled'">
+                  <button ion-button round outline type="button" (click)="changeStatus('enabled')">Enable</button>
+                  <button ion-button round outline type="button" (click)="dismiss()">Close</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </div>
+</ion-content>

@@ -1,0 +1,21 @@
+modal {
+    .modalIonContet{
+        /*background: rgba(0,0,0,0.8);*/
+        background: rgba(0,0,0,0.8);
+    }
+    .fixed-content{
+        background-image: unset;
+    }
+    .modalCard{
+        background-color: #38bf9a;
+        /*background-color: #14465F;*/
+        border: 1px solid #fff;
+    }
+    .toolbar-title-md{
+        
+    }
+    .toolbar-title{
+        overflow: visible;
+        white-space: unset;
+    }
+}

@@ -1,0 +1,43 @@
+<ion-content>
+  <!-- <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>TOTAL AMOUNT</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h1 class="coinTotalValue">$450.76</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item> -->
+  <ion-item class="ion-item-wallet" text-center>
+    Cryptocurrency Accounts
+  </ion-item>
+  <div *ngIf="!loading">
+    <ion-item class="ion-item-wallet" *ngIf="walletList else emptywallet">
+      <ion-grid>
+        <ion-row>
+          <ion-card class="dashCard" *ngFor="let data of walletList">
+            <ion-card-content>
+              <ion-row>
+                <ion-col col-2>
+                  <img class="center-img" [src]="appUtils.SanitizeUrl(assetsUrl+'storage/uploads/user_null/'+data.curr_image)">                  
+                </ion-col>
+                <ion-col col-5>
+                  {{data.curr_name}}
+                </ion-col>
+                <ion-col col-5 text-center>
+                  <span class="coinVal">{{data.available_balance}}</span> {{data.curr_code}}
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ng-template #emptywallet>No data available. Please try again.</ng-template>
+  </div>
+  <ion-item *ngIf="loading">Loading...</ion-item>
+
+</ion-content>

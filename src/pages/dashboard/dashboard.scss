@@ -1,0 +1,33 @@
+page-dashboard {
+  .tabs-md .tab-button[aria-selected=true]{
+    background-color: #fafafa;
+    color: #38bf9a;
+  }
+
+  .tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+    color: #38bf9a;
+  }
+
+  .fixed-content{
+    background: unset;
+  }
+
+  .tabs-md .tab-button{
+    background-color: #fff;
+    color: #5e5e5e;
+  }
+
+  .tabs-md .tab-button-icon{
+    color: unset;
+  }
+
+  .tabs-ios .tab-button-icon{
+    color: unset;
+  }
+
+  .button-small-md {
+    height: 1.8em;
+    font-size: 1.3rem;
+    padding: 5px;
+  }
+}

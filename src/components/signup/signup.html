@@ -1,0 +1,67 @@
+<div class="outterMostDiv">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ionicLogoOuter">
+        <div class="logoOuter">
+          <img src="assets/imgs/logo2.png" class="logo" />
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="logoHeader">
+        Valuebit
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list class="signup-list">
+          <form [formGroup]="signupForm" (ngSubmit)="signupEmailFormSubmit()">
+            
+            <ion-item class="formInput">
+              <ion-label color="primary">
+                <ion-icon class="IonIcon" name="ios-person-outline"></ion-icon>
+              </ion-label>
+              <ion-input type="text" placeholder="User Name" formControlName="txtSignUpUserName" (keyup)="checkUsernameAvailability(signupForm.controls['txtSignUpUserName'])"></ion-input>
+            </ion-item>
+            <div class="alert" *ngIf="signupForm.controls['txtSignUpUserName'].touched && !usernameavailable">Username Not Available</div>
+            <div class="alert" *ngIf="!signupForm.controls['txtSignUpUserName'].valid && signupForm.controls['txtSignUpUserName'].touched && usernameavailable">Min 6 characters required</div>
+  
+            <ion-item class="formInput">
+              <ion-label color="primary">
+                <ion-icon class="IonIcon" name="ios-mail-outline"></ion-icon>
+              </ion-label>
+              <ion-input type="email" placeholder="Email" formControlName="txtSignUpUserEmail" (keyup)="checkEmailAvailability(signupForm.controls['txtSignUpUserEmail'])"></ion-input>
+            </ion-item>
+            <div class="alert" *ngIf="signupForm.controls['txtSignUpUserEmail'].touched && !emailavailable">Email not available</div>
+            <div class="alert" *ngIf="!signupForm.controls['txtSignUpUserEmail'].valid && signupForm.controls['txtSignUpUserEmail'].touched && emailavailable">Invalid Email Address</div>
+            <!-- <div class="alert" *ngIf="!signupForm.controls['txtSignUpUserName'].valid && signupForm.controls['txtSignUpUserName'].touched">{{msg}}</div> -->
+            <ion-item class="formInput">
+              <ion-label color="primary">
+                <ion-icon class="IonIcon" name="ios-unlock-outline"></ion-icon>
+              </ion-label>
+              <ion-input type={{passwordType}} placeholder="Password" formControlName="pwdSignUpUserPassword"></ion-input>
+            </ion-item>
+            <div class="alert" *ngIf="!signupForm.controls['pwdSignUpUserPassword'].valid && signupForm.controls['pwdSignUpUserPassword'].touched">Min 6 characters required</div>
+            <ion-grid class="loginBtnGrid">
+              <ion-row>
+                <ion-col class="signupBtnGrid">
+                  <button ion-button round outline full [disabled]="!signupForm.valid || !usernameavailable || !emailavailable" class="signupBtn">Register</button>
+                  <!--button ion-button round outline type="button" (click)="cancelSignup()">Cancel</button-->
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <span class="signupLoginBtn">
+                    <span (click)="cancelSignup()">Already have an account? <b> Log In</b></span>
+                  </span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </form>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

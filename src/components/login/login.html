@@ -1,0 +1,107 @@
+<div class="outterMostDiv">
+    <ion-grid>
+        <ion-row *ngIf="!auth.loggedIn && !home.forgetPassword">
+            <ion-col class="ionicLogoOuter">
+                <div class="logoOuter">
+                    <img src="assets/imgs/logo2.png" class="logo" />
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!auth.loggedIn && !home.forgetPassword">
+            <ion-col class="logoHeader">
+                Valuebit
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="home.forgetPassword">
+            <ion-col class="ionicLogoOuter">
+                <div class="logoOuter logoForgetPass">
+                    <img src="assets/imgs/forget-passwrd-logo.png" class="logo" />
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="home.forgetPassword">
+            <ion-col class="logoSubHeader logoHeader">
+                Forgot Your
+                <br/> Password?
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-list *ngIf="!auth.loggedIn && !home.forgetPassword" class="login-list">
+                    <form [formGroup]="loginForm" (ngSubmit)="loginByEmailFormSubmit()">
+                        <ion-item class="formInput">
+                            <ion-label color="primary">
+                                <ion-icon class="IonIcon" name="ios-person-outline"></ion-icon>
+                            </ion-label>
+                            <ion-input type="email" placeholder="Username" formControlName="txtLoginUsername"></ion-input>
+                        </ion-item>
+                        <ion-item class="formInput">
+                            <ion-label color="primary">
+                                <ion-icon class="IonIcon" name="ios-unlock-outline"></ion-icon>
+                            </ion-label>
+                            <ion-input type={{passwordType}} placeholder="Password" formControlName="pwdLoginPassword"></ion-input>
+                        </ion-item>
+                        <ion-grid class="loginBtnGrid">
+                            <ion-row>
+                                <ion-col class="loginBtnGrid">
+                                    <button ion-button round outline [disabled]="!loginForm.valid" full class="loginBtn">Login</button>
+                                    <!--button ion-button round outline type="button" (click)="signup()">Sign up</button -->
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-title *ngIf="!forgetPasswordEmailSent">
+                                        <span (click)="forgetPassword()" class="forgetPassBtnLogin forgetPassword"> Forget your password?</span>
+                                    </ion-title>
+                                    <ion-title *ngIf="forgetPasswordEmailSent">
+                                        <span (click)="resendResetLink()" class=" forgetPassBtnLogin forgetPassword"> Resend the reset Link.</span>
+                                    </ion-title>
+                                </ion-col>
+                            </ion-row>
+                            <!-- <ion-row>
+                                <ion-col style="padding: 20px 0px;">
+                                    <div class="hr_behind_text">
+                                        Or Login with
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col class="socialMediaLoginIconsOuter">
+                                    <span class="socila-circle fa fa-facebook"></span>
+                                    <span class="socila-circle fa fa-google-plus"></span>
+                                    <span class="socila-circle fa fa-linkedin"></span>
+                                    <span class="socila-circle fa fa-twitter"></span>
+                                </ion-col>
+                            </ion-row> -->
+                            <ion-row>
+                                <ion-col>
+                                    <span class="btnRegsiterLink" (click)="signup()">Register here to get started</span>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </form>
+                </ion-list>
+                <ion-list *ngIf="home.forgetPassword" class="login-list">
+                    <form [formGroup]="forgetPasswordForm" (ngSubmit)="resetPassword()">
+                        <ion-item class="formInput">
+                            <ion-input type="email" placeholder="Type your email" formControlName="txtForgetPasswordUserEmail"></ion-input>
+                        </ion-item>
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <button ion-button round outline [disabled]="!forgetPasswordForm.valid" class="forgetPasswordBtn" full>Send&nbsp;&nbsp;
+                                        <ion-icon name="mail"></ion-icon>
+                                    </button>
+                                    <!--button ion-button round outline type="button" (click)="forgetPassword()">Cancel</button-->
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </form>
+                </ion-list>
+                <div *ngIf="home.pinVerification">
+                    <verify-pin></verify-pin>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>

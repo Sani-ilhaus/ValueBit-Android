@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="navbarAppHead" style="padding-left:4em">SELL CRYPTOCURRENCY</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-title text-center>
+    SELL BTC
+  </ion-title>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-chip color="primary">
+          <ion-label color="dark">
+            <span class="title">Your Buying Limits</span>
+          </ion-label>
+        </ion-chip>
+        <ion-label class="label">
+          <span class="title"> 10 per 24 hours. You can buy 10 now.</span>
+        </ion-label>
+        <form [formGroup]="todo" (ngSubmit)="logForm()">
+          <ion-item class="formInput">
+            <ion-label>BTC:</ion-label>
+            <ion-input [disabled]='!formActive' type="number" formControlName="btc"></ion-input>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-title>
+                  <div class="outerDiv" style="color:#000;">
+                    OR
+                  </div>
+                </ion-title>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-item class="formInput">
+            <ion-label></ion-label>
+            <ion-input placeholder="INR" [disabled]='!formActive' type="number" formControlName="transPass"></ion-input>
+          </ion-item>
+          <ion-label class="label" style="color:#000;">
+            <div class="outerDiv">At Rs:
+              <b style="color:#000;"> 744354 </b> per BTC
+            </div>
+          </ion-label>
+          <ion-item class="formInput">
+            <ion-label style="color:#000;">Payment Type</ion-label>
+            <ion-select [disabled]='!formActive' formControlName='payType'>
+              <ion-option value="f">INR Balance (Balance: 0)</ion-option>
+              <ion-option value="m">Wallets and Netbanking ( Additional 1.9% processing fee applies)</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="formInput">
+            <ion-label></ion-label>
+            <ion-input placeholder="FEE" [disabled]='!formActive' type="number" formControlName="fee"></ion-input>
+          </ion-item>
+          <ion-item class="formInput">
+            <ion-label></ion-label>
+            <ion-input placeholder="TAX" [disabled]='!formActive' type="number" formControlName="tax"></ion-input>
+          </ion-item>
+          <ion-item class="formInput">
+            <ion-label></ion-label>
+            <ion-input placeholder="Total" [disabled]='!formActive' type="number" formControlName="total"></ion-input>
+          </ion-item>
+          <div class="outerDiv">
+            <button ion-button type="submit" class="customBtn" [hidden]="twoStepActive" [disabled]="!todo.valid">Submit</button>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf='twoStepActive'>
+    <ion-row>
+      <ion-col>
+        <two-sf [sendTo]="sendTo"></two-sf>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

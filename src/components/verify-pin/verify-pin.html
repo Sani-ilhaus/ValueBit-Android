@@ -1,0 +1,80 @@
+<div>
+    <ion-list>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <!-- <ion-title *ngIf="!auth.userPinSetStatus && !reverify" class="navbarAppHead">Enter a new Pin</ion-title>
+                    <ion-title *ngIf="auth.userPinSetStatus" class="navbarAppHead">Pin Verification</ion-title>
+                    <ion-title *ngIf="reverify" class="navbarAppHead">Enter the pin again</ion-title> -->
+                    <!-- <ion-title class="navbarAppHead">Enter your verification code</ion-title> -->
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <input type="number" (keyup)="getValue($event)" pattern="^[1-9][0-9]*$" [disabled]="inpComp" class="pin twoPin" maxlength="4"
+                        placeholder="xxxx" #pin id="pin" autofocus/>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <!--<form [formGroup]="verifyPin" (ngSubmit)="pinVerification()">
+          <ion-item class="formInput">
+            <ion-input type="text" [disabled]="auth.disableForm" maxLength="1" (keyup)="changeFocus('pin1',$event)" #pin1 formControlName="pin1"></ion-input>
+            <ion-input type="text" [disabled]="auth.disableForm" maxLength="1" (keyup)="changeFocus('pin2',$event)" #pin2 formControlName="pin2"></ion-input>
+            <ion-input type="text" [disabled]="auth.disableForm" maxLength="1" (keyup)="changeFocus('pin3',$event)" #pin3 formControlName="pin3"></ion-input>
+            <ion-input type="text" [disabled]="auth.disableForm" maxLength="1" (keyup)="changeFocus('pin4',$event)" #pin4 formControlName="pin4"></ion-input>
+          </ion-item>
+        </form>-->
+    </ion-list>
+    <!--ion-list *ngIf="reverify">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-title>Re-Enter a Pin</ion-title>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <input type="text" (keyup)="getValue($event)" pattern="^[1-9][0-9]*$" [disabled]="inpComp"
+               maxlength="4" placeholder="xxxx"/>
+        <!--<form [formGroup]="reverifyPin" (ngSubmit)="pinVerification()">
+          <ion-item class="formInput">
+            <ion-input type="text"  maxLength="1" (keyup)="rechangeFocus('pin11',$event)" #pin11 formControlName="pin11"></ion-input>
+            <ion-input type="text"  maxLength="1" (keyup)="rechangeFocus('pin22',$event)" #pin22 formControlName="pin22"></ion-input>
+            <ion-input type="text"  maxLength="1" (keyup)="rechangeFocus('pin33',$event)" #pin33 formControlName="pin33"></ion-input>
+            <ion-input type="text"  maxLength="1" (keyup)="rechangeFocus('pin44',$event)" #pin44 formControlName="pin44"></ion-input>
+          </ion-item>
+        </form>>
+    </ion-list>
+</div>
+<div *ngIf="auth.userPinSetStatus">
+    <ion-list>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-title>Verify your Pin</ion-title>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <input type="text" (keyup)="getValue($event)" pattern="^[1-9][0-9]*$" [disabled]="inpComp" id="inputPin"
+               maxlength="4" placeholder="xxxx"/>
+        <!--<form [formGroup]="rePinInput">
+          <ion-item class="formInput">
+            <ion-input type="text" maxLength="1"  (keyup)="rechangeFocus('pin11',$event)" #pin11 formControlName="pin11"></ion-input>
+            <ion-input type="text" maxLength="1"  (keyup)="rechangeFocus('pin22',$event)" #pin22 formControlName="pin22"></ion-input>
+            <ion-input type="text" maxLength="1"  (keyup)="rechangeFocus('pin33',$event)" #pin33 formControlName="pin33"></ion-input>
+            <ion-input type="text" maxLength="1"  (keyup)="rechangeFocus('pin44',$event)" #pin44 formControlName="pin44"></ion-input>
+          </ion-item>
+        </form>>
+    </ion-list -->
+    <ion-list>
+        <div class="verifyPinTxt">
+            <div style="text-align: center">Note</div>
+            <div style="text-align: left">
+                <p>1. Please preserve this pin and keep it safe.</p>
+                <p>2. Please do not share this pin with anyone else.</p>
+                <p>3. This pin will be used for unlocking the app.</p>
+            </div>
+        </div>
+    </ion-list>
+</div>

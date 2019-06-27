@@ -1,0 +1,74 @@
+<!-- Generated template for the CurrencytradegraphComponent component -->
+<ion-header>
+  <!-- <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="navbarAppHead">
+            DASHBOARD
+        </ion-title>
+    </ion-navbar> -->
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+    <!-- <ion-icon name="close" (click)="CloseModal();" end></ion-icon> -->
+    <!-- <ion-buttons>
+      <ion-button end>
+        <ion-icon name="close" (click)="CloseModal();"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-buttons end>
+      <button ion-button clear color="light" (click)="CloseModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="segmentData" color="dark">
+    <ion-segment-button value="0" (click)="SelectedTab(0)" id="chart" style="height: 55px;">
+      <ion-icon name="md-trending-up" style="line-height: 3rem;"></ion-icon>
+      <span style="margin-top: -20px !important; display: block">
+        Chart
+      </span>
+    </ion-segment-button>
+    <ion-segment-button value="1" (click)="SelectedTab(1)" id="trade" style="height: 55px;">
+      <ion-icon name="ios-snow" style="line-height: 3rem;"></ion-icon>
+      <span style="margin-top: -20px !important; display: block">
+        Trade
+      </span>
+    </ion-segment-button>
+
+    <ion-segment-button value="2" (click)="SelectedTab(2)" id="openOrder" style="height: 55px;">
+      <ion-icon name="cube" style="line-height: 3rem;"></ion-icon>
+      <span style="margin-top: -20px !important; display: block">
+        Open Order
+      </span>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+<ion-content>
+  <ion-slides (ionSlideWillChange)="ChangeSlide($event)" #graphSlide>
+    <ion-slide>
+      <chart [currName]="modalData.curr_code"></chart>
+    </ion-slide>
+    <ion-slide>
+      <crypto-currency-exchange [currency]="modalData"></crypto-currency-exchange>
+    </ion-slide>
+    <ion-slide>
+        No data available
+    </ion-slide>
+  </ion-slides>
+  <!-- <div [ngSwitch]="segmentData">
+    <div *ngSwitchCase="0">
+      <div id="currencyGraphDiv" style="height: 500px;">
+
+      </div>
+    </div>
+    <div *ngSwitchCase="1">
+      Hello this is graphp modal 2
+    </div>
+    <div *ngSwitchCase="2">
+      Hello this is graphp modal 3
+    </div>
+  </div> -->
+
+
+</ion-content>

@@ -1,0 +1,68 @@
+<!--
+  Generated template for the IntroductionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--ion-header>
+
+  <ion-navbar>
+    <ion-title>Introduction</ion-title>
+  </ion-navbar>
+
+</ion-header-->
+
+
+<ion-content>
+  <ion-slides (ionSlideDidChange)="slideChanged($event)" pager="true">
+    <ion-slide>
+      <div class="introSlide">
+        <img src="assets/imgs/logo.png" class="slideImg">
+        <h2>Welcome User!</h2>
+        <p>Hello this is testing content for Valuebit App introducton.</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="introSlide">
+        <img src="assets/imgs/logo.png" class="slideImg">
+        <h2>Valuebit Introduction 1</h2>
+        <p>Hello this is testing content for Valuebit App introducton.</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="introSlide">
+        <img src="assets/imgs/logo.png" class="slideImg">
+        <h2>Valuebit Introduction 2</h2>
+        <p>Hello this is testing content for Valuebit App introducton.</p>
+      </div>
+    </ion-slide>
+    <!-- <ion-slide>
+      <div>
+        <img src="assets/imgs/logo.png" class="slideImg">
+        <h2>Welcome User!</h2>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/imgs/logo.png" class="slideImg">
+        <h2>Welcome User!</h2>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/imgs/logo.png" class="slideImg">
+        <h2>Welcome User!</h2>
+      </div>
+    </ion-slide> -->
+  </ion-slides>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <button ion-button outline (click)='GoToHome()' *ngIf="currentIndex != 2">SKIP</button>
+      <button ion-button outline (click)='GoToHome()' *ngIf="currentIndex == 2">FINISH</button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

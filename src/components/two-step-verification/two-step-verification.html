@@ -1,0 +1,102 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="navbarApp">2-STEP VERIFICATION
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="CloseModal()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <!-- <div>
+        <ion-list>
+            <ion-grid *ngIf="auth.twoFactorStatus == '0'">
+                <ion-row>
+                    <ion-col>
+                        <ion-title class="twoSfTitile" *ngIf="!reverify">Enter your verification code</ion-title>
+                        <ion-title class="twoSfTitile" *ngIf="reverify">Enter your verification code</ion-title>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-item>
+                <ion-label style="color:#000;">2-Factor Verification Status</ion-label>
+                <ion-toggle [(ngModel)]="twosf" (ionChange)="toggleTwoSF()"></ion-toggle>
+            </ion-item>
+            <ion-grid *ngIf="auth.twoFactorStatus == '0'">
+                <ion-row>
+                    <ion-col>
+                        <ion-row>
+                            <input type="number" (keyup)="getValue($event)" pattern="^[1-9][0-9]*$" [disabled]="inpComp" class="pin twoPin" maxlength="4"
+                                placeholder="xxxxxx" #twopin id="twopin" autofocus/>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="loginBtnGrid">
+                                <button style="float:right" ion-button round outline full class="twosfBtn" (click)="submit()">VERIFY &nbsp;
+                                    <ion-icon name="md-checkmark"></ion-icon>
+                                </button>                                
+                            </ion-col>
+                            <ion-col class="loginBtnGrid">
+                                <button style="float:left" ion-button round outline full class="twosfBtn cancelBtn" (click)="dismiss()">CANCEL &nbsp;
+                                    <ion-icon name="md-close"></ion-icon>
+                                </button>                                
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+    </div> -->
+    <!-- <div *ngIf="auth.twoFactorStatus == '1'"> -->
+    <ion-list>
+        <ion-item>
+            <ion-label style="color:#000;">2-Factor Verification Status</ion-label>
+            <ion-toggle [(ngModel)]="twosf" (ionChange)="toggleTwoSF()"></ion-toggle>
+        </ion-item>
+        <ion-item *ngIf="twofaDisableDiv">
+            <ion-row>
+                <ion-col>
+                    <ion-title class="twoSfTitile" *ngIf="!reverify">Enter your verification code</ion-title>
+                    <ion-title class="twoSfTitile" *ngIf="reverify">Enter your verification code</ion-title>
+                </ion-col>
+            </ion-row>
+            <two-sf [sendTo]="componentName" (ChangeTwoFaStatus)="ChangeTwoFA($event)"></two-sf>
+        </ion-item>
+        <ion-item>
+            <ion-grid *ngIf="twofaEnableDiv">
+                <ion-row>
+                    <ion-col>
+                        <ion-title class="twoSfTitile" *ngIf="!reverify">Enter your verification code</ion-title>
+                        <ion-title class="twoSfTitile" *ngIf="reverify">Re-enter your verification code</ion-title>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-row>
+                            <input type="number" (keyup)="getValue($event)" pattern="^[1-9][0-9]*$" [disabled]="inpComp" class="pin twoPin" maxlength="4" placeholder="xxxxxx" #twopin id="twopin" autofocus/>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="loginBtnGrid">
+                                <button style="float:right" ion-button round outline full class="twosfBtn" (click)="submit()">VERIFY &nbsp;
+                                    <ion-icon name="md-checkmark"></ion-icon>
+                                </button>
+                                <!--button ion-button round outline type="button" (click)="signup()">Sign up</button -->
+                            </ion-col>
+                            <ion-col class="loginBtnGrid">
+                                <button style="float:left" ion-button round outline full class="twosfBtn cancelBtn" (click)="dismiss()">CANCEL &nbsp;
+                                    <ion-icon name="md-close"></ion-icon>
+                                </button>
+                                <!--button ion-button round outline type="button" (click)="signup()">Sign up</button -->
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+    <!-- </div> -->
+
+</ion-content>

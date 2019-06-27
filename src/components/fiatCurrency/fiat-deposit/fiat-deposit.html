@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="navbarAppHead" style="padding-left:2em">FIAT DEPOSIT</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-title text-center>
+    <!-- FIAT WALLET -->
+  </ion-title>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="todo" (ngSubmit)="logForm()">
+          <ion-item class="formInput">
+            <ion-label><i class="fa fa-id-card"></i></ion-label>
+            <ion-input placeholder="Deposit Amount (19282)" [disabled]='!formActive' type="number" formControlName="depositAmount"></ion-input>
+          </ion-item>
+          <ion-item class="ddlformInput">
+            <ion-label>From Bank Name</ion-label>
+            <ion-select placeholder="" [disabled]='!formActive' formControlName="frombankName">
+              <ion-option value="nes" >NES</ion-option>
+              <ion-option value="n64">Nintendo64</ion-option>
+              <ion-option value="ps">PlayStation</ion-option>
+              <ion-option value="genesis">Sega Genesis</ion-option>
+              <ion-option value="saturn">Sega Saturn</ion-option>
+              <ion-option value="snes">SNES</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="formInput">
+            <ion-label><i class="fa fa-university"></i></ion-label>
+            <ion-input placeholder="From Bank Account" [disabled]='!formActive' type="number" formControlName="frombankAccount"></ion-input>
+          </ion-item>
+          <ion-item class="formInput">
+            <ion-label><i class="fa fa-credit-card"></i></ion-label>
+            <ion-input placeholder="Bank Reference Number" [disabled]='!formActive' type="number" formControlName="bankRefNo"></ion-input>
+          </ion-item>
+          <ion-item class="formInput">
+            <ion-label><i class="fa fa-edit"></i></ion-label>
+            <ion-input  placeholder="Your Description" [disabled]='!formActive' type="text" formControlName="description"></ion-input>
+          </ion-item>
+          <ion-item class="ddlformInput">
+            <ion-label><ion-icon name="logo-usd"></ion-icon>Which Bank too deposit</ion-label>
+            <ion-select placeholder="" [disabled]='!formActive'  formControlName="accToDepositIn" name="accToDepositIn">
+              <ion-option value="nes" >NES</ion-option>
+              <ion-option value="n64">Nintendo64</ion-option>
+              <ion-option value="ps">PlayStation</ion-option>
+              <ion-option value="genesis">Sega Genesis</ion-option>
+              <ion-option value="saturn">Sega Saturn</ion-option>
+              <ion-option value="snes">SNES</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="formInput">
+            <ion-label><i class="fa fa-key"></i></ion-label>
+            <ion-input placeholder="Transaction Password" [disabled]='!formActive' type="number" formControlName="transPass"></ion-input>
+          </ion-item>
+          <div class="outerDiv">
+            <button class="customBtn" ion-button type="submit" [hidden]="!formActive" [disabled]="!this.todo.valid">Submit</button>
+          </div>
+          <ion-label *ngIf="workinprogress" style="color:white; font-size: 20px; text-align: center;">Work in progress</ion-label>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf='twoStepActive'>
+    <ion-row>
+      <ion-col>
+        <two-sf [sendTo]="sendTo"></two-sf>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

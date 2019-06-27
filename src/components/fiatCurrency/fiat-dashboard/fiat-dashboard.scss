@@ -1,0 +1,93 @@
+fiat-dashboard {
+    /*.card-md{
+        margin: unset;
+    }
+    .card-ios{
+        margin: unset;
+    }
+    .scroll-content{
+        padding: unset !important;
+    }
+    */
+    .coinIcon{
+        width: 8vh;
+    }
+    .icon-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btc{
+        // background-color: #FF6107;
+        // color: #FF6107;
+        // border-color: #FF6107; 
+    }
+    // .dash{
+    //     background-color: #5EA6FF;
+    // }
+    // .doge{
+    //     background-color: #3FB38D;
+    // }
+    // .eth{
+    //     background-color: #5EA6FF;
+    // }
+    // .ltc{
+    //     background-color: #3FB38D;
+    // }
+    .button-outline-md{
+        border-color: unset;
+    }
+    .button-outline-ios{
+        border-color: unset;
+    }
+    .btcbtn{
+        color: #FF6107;
+        border-color: #FF6107; 
+    }
+    .dashbtn{
+        color: #5EA6FF;
+        border-color: #5EA6FF; 
+    }
+    .dogebtn{
+        color: #3FB38D;
+        border-color: #3FB38D;
+    }
+    .ethbtn{
+        color: #5EA6FF;
+        border-color: #5EA6FF;
+    }
+    .ltcbtn{
+        color: #3FB38D;
+        border-color: #3FB38D;
+    }
+    .card-content-md{
+        padding: unset;
+    }
+
+    .btnDeposit{
+        background-color: #f0ad4e;
+        color: #fff;
+        border-radius: 3em;
+        padding: 10px !important;
+        float: right;
+    }
+    .btnHistory{
+        background-color: #f0ad4e;
+        color: #fff;
+        border-radius: 3em;
+        padding: 10px !important;
+        float: right;
+    }
+    .btnWithdrawl{
+        float: right;
+        background-color: #57a24a;
+        color: #fff;
+        border-radius: 3em;
+        padding: 10px !important;
+    }
+    .cardBackground{
+        background-color: #f5f5f5;
+        border-radius: 1em;
+    }
+
+}

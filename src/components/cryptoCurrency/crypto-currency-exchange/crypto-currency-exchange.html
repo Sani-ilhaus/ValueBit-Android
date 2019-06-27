@@ -1,0 +1,117 @@
+<ion-header *ngIf="!currency">
+  <ion-navbar>
+    <ion-title class="navbarAppHead" style="padding-left:3em">EXCHANGE CRYPTOCURRENCY</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <!-- <span ion-text color="primary" showWhen="ios">Cancel</span> -->
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-title text-center color="dark" *ngIf="selectedCoin != undefined">
+    <span style="color:#000">Exchange {{selectedCoin.curr_code}}</span>
+  </ion-title>
+
+  <ion-grid *ngIf="selectedCoin != undefined">
+    <ion-row>
+      <ion-col>
+        <!-- <ion-row class="btcLimitTag">
+          <ion-chip color="primary">
+            <ion-label color="dark">Your Buying Limits
+              <br/>
+              <b>10 per 24 hours. You can buy 10 now.</b>
+            </ion-label>
+          </ion-chip>
+        </ion-row> -->
+        <form [formGroup]="currencyExchangeForm" (ngSubmit)="logForm()">
+          <ion-item class="formInput">
+            <ion-label style="text-align:left;">
+              <ion-icon name="card"></ion-icon>&nbsp;&nbsp;Exchange To
+            </ion-label>
+            <ion-select [disabled]='!formActive' formControlName='txtExchangeTo' name="radPaymentType" (change)="CalculateMoney()">
+              <ng-container *ngFor="let currency of cryptoService.CryptoCurrencies">
+                <ion-option style="color:#fff;" *ngIf="currency.curr_code != selectedCoin.curr_code">
+                  {{currency.curr_code}}
+                </ion-option>
+              </ng-container>
+            </ion-select>
+          </ion-item>
+          <ion-item class="formInput">
+            <ion-label>Amount:</ion-label>
+            <ion-input [disabled]='!formActive' type="number" formControlName="txtAmount" (keyup)="CalculateMoney()"></ion-input>
+          </ion-item>
+          
+          <ion-label class="label">
+            Commision charge : {{exchangeData.txtFinalCommisionForExchange || 0}}
+          </ion-label>
+          <ion-label class="label">
+            Amount to be transfered :  {{exchangeData.txtFinalExchangeAmountToConvertedCurrency || 0}}
+          </ion-label>
+
+
+
+
+          <!-- <ion-item class="formInput">
+            <ion-label>{{selectedCoin.curr_code}}:</ion-label>
+            <ion-input [disabled]='!formActive' type="number" formControlName="txtCurrencyBuyAmountNew" (keyup)="CalculateMoney()"></ion-input>
+          </ion-item>
+          <ion-item class="formInput">
+            <ion-label style="text-align:left;">
+              <ion-icon name="card"></ion-icon>&nbsp;&nbsp;Payment Type
+            </ion-label>
+            
+            <ion-select formControlName='radPaymentType' name="radPaymentType">
+              <ion-option style="color:#fff;" [value]="bal" [selected]="currencyBuyForm.value.radPaymentType == 'bal'">
+                {{general.country}} Balance {{currencyBuyForm.value.radPaymentType}}
+              </ion-option>
+              <ion-option style="color:#fff;" [value]="wallet" [selected]="currencyBuyForm.value.radPaymentType == 'wallet'">
+                Wallets and Netbanking ( Additional 1.9% processing fee applies)
+              </ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="formInput">
+            <ion-label>
+              <ion-icon name="usd"></ion-icon>&nbsp;&nbsp;FEE:(%)
+            </ion-label>
+            <ion-input type="number" formControlName="txtCurrencyBuyFees" [disabled]='true'></ion-input>
+          </ion-item> -->
+          <!-- <ion-item class="formInput">
+            <ion-label>
+              <ion-icon name="albums"></ion-icon>&nbsp;&nbsp;TAX:
+            </ion-label>
+            <ion-input type="number" formControlName="tax" [disabled]='!formActive'></ion-input>
+          </ion-item> -->
+          <!-- <ion-item class="formInput">
+            <ion-label>
+              <ion-icon name="card"></ion-icon>&nbsp;&nbsp;Total:
+            </ion-label>
+            <ion-input type="number" formControlName="txtCurrencyBuyTotal" [disabled]='true'></ion-input>
+            <ion-input type="number" formControlName="txtCurrencyBuyAmount" [hidden]="true" [disabled]='true'></ion-input>
+            <ion-input type="number" formControlName="txtCurrencyBuyFeesTransaction" [hidden]="true" [disabled]='true'></ion-input>
+          </ion-item> -->
+          <div class="outerDiv">
+            <button ion-button type="submit" class="customBtn" [hidden]="twoStepActive" [disabled]="!currencyExchangeForm.valid">
+              Exchange
+            </button>
+          </div>
+          <ion-label class="label">(You will confirm in next step)
+          </ion-label>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf='twoStepActive'>
+    <ion-row>
+      <ion-col>
+        <ion-title text-center color="dark">
+          <span style="color:#000">Verify 2-FA password</span>
+        </ion-title>
+        <ion-title>Verify 2-FA password</ion-title>
+        <two-sf [sendTo]="sendTo"></two-sf>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

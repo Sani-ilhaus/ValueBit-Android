@@ -1,0 +1,91 @@
+signup {
+  .formInput {
+    border: 4px solid #38bf9a;
+    color: #fff;
+    background-color: #fff;
+    border-radius: 30px;
+    height: 5rem;
+    margin-bottom: 24px;
+  }
+  .alert{
+    display: block;
+    position: relative;
+    text-align: left;
+    color: red;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    padding: 4px 20px;
+  }
+
+  .signup-list{
+    width: 100%;
+  }
+  .forgetPassword{
+    text-anchor: middle;
+    text-decoration: underline;
+    font-size: 1.6rem;
+  }
+  .signupBtn{
+    padding: 0;
+    background: #38bf9a;
+    border-radius: 25px !important;
+    height: 8vh;
+  }
+  .signupBtnGrid{
+    padding: 0;
+  }
+
+  .forgetPassBtnLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .signupLoginBtn >span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #38bf9a;
+    font-size: 1.6rem;
+  }
+
+  .socialMediaLoginIconsOuter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .socialIconsOuterSpan{
+    border-radius: 50%;
+    height: 100%;
+    padding: 5px;
+    border: 4px solid #fff;
+    margin: 2px;
+    height: 90%;
+    width: 15%;
+  }
+
+  .btnRegsiterLink{
+    font-style: normal;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    font-size: 1.6rem;
+    color: #38bf9a;
+  }
+
+  .socialIcons{
+    padding: 5px;
+    color: #fff;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 2rem;
+  }
+
+  .IonIcon{
+    color: #38bf9a;
+    font-size: 3rem;
+  }
+}

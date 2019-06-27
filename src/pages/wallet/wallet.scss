@@ -1,0 +1,30 @@
+page-wallet {
+    .coinVal{
+        font-weight: bolder;
+        padding-left: 4px; 
+        padding-right: 4px; 
+    }
+    .dashCard{
+        background: #fafafa;
+        border-radius: 8px;
+    }
+    .ion-item-wallet > div{
+        border-bottom: unset !important;
+    }
+    .coinTotalValue{
+        font-size: 4.2rem;
+        color: #38bf9a;
+    }
+    .ion-item-wallet > div > div > .label-md{
+        margin:0;
+    }
+    .ion-item-wallet > div > div > .label-ios{
+        margin:0;
+    }
+    .ion-row {
+        text-align: center;
+        }
+        [col-5] {
+            padding: 18px;
+        }
+}

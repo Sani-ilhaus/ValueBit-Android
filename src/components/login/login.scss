@@ -1,0 +1,103 @@
+login {
+    .formInput {
+        border: 4px solid #38bf9a;
+        color: #fff;
+        background-color: #fff;
+        border-radius: 30px;
+        height: 8vh;
+        margin-bottom: 24px;
+    }
+    .login-list {
+        width: 100%;
+    }
+    .forgetPassword {
+        text-anchor: middle;
+        text-decoration: underline;
+        font-size: 1.2rem;
+    }
+    .hr_behind_text {
+        display: table;
+        white-space: nowrap;
+        color: #fff;
+        &:before,
+        &:after {
+            border-top: 1px solid #68ACA1;
+            content: '';
+            display: table-cell;
+            position: relative;
+            top: 0.5em;
+            width: 45%;
+        }
+        &:before {
+            right: 1.5%;
+        }
+        &:after {
+            left: 1.5%;
+        }
+    }
+    /*.hr_behind_text span {
+      background: #f2f0e4;
+      padding: 0 20px;
+      text-align : Center; 
+    }
+    .hr_behind_text+* {
+      border-top: solid 2px #adac97;
+      padding-top: 28px;
+      margin-top: -28px;
+    }*/
+    .logoSubHeader {
+        text-align: center;
+        font-weight: bolder;
+    }
+    .loginBtn {
+        // width: 70%;
+        padding: 0;
+        background: #38bf9a;
+        border-radius: 25px !important;
+        height: 5rem;
+    }
+    .loginBtnGrid {
+        padding: 0;
+    }
+    .forgetPassBtnLogin {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .socialMediaLoginIconsOuter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .socila-circle {
+        width: 40px;
+        line-height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1.6rem;
+        border: 4px solid #fff;
+        color: #fff;
+        margin: 0 5px;
+    }
+    .btnRegsiterLink {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38bf9a;
+      font-size: 1.6rem;
+      
+    }
+    .forgetPasswordBtn {
+        padding: 0;
+        background: #38bf9a;
+        border-radius: 25px !important;
+        height: 8vh;
+    }
+    .logoForgetPass {
+        border: unset;
+    }
+    .IonIcon {
+        color: #38bf9a;
+        font-size: 3rem;
+    }
+}

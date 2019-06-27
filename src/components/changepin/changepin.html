@@ -1,0 +1,43 @@
+<!-- Generated template for the ChangepinComponent component -->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>CHANGE PIN</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="CloseModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div class="centerItem">
+    <form [formGroup]="changePinForm">
+      <ion-item class="formInput">
+        <ion-label>
+          <!-- <ion-icon class="IonIcon" name="md-person"></ion-icon> -->
+          Old Pin
+        </ion-label>
+        <ion-input type="number" (keyup)="getValue($event)" pattern="^[1-9][0-9]*$" maxlength="4" placeholder="xxxx" #oldpin id="oldpin"
+          autofocus formControlName="txtOldAppInitPin"></ion-input>
+      </ion-item>
+
+      <ion-item class="formInput">
+        <ion-label>
+          <!-- <ion-icon class="IonIcon" name="md-person"></ion-icon> -->
+          New Pin
+        </ion-label>
+        <ion-input type="number" (keyup)="getValue($event)" pattern="^[1-9][0-9]*$" maxlength="4" placeholder="xxxx" #newpin id="newpin"
+          formControlName="txtNewAppInitPin"></ion-input>
+      </ion-item>
+
+
+    </form>
+    <div no-padding style="text-align: center">
+      <button type="button" (click)="ChangePin()" ion-button round outline class="customBtn profileBtn">Change</button>
+    </div>
+  </div>
+
+</ion-content>

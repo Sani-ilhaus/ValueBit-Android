@@ -1,0 +1,56 @@
+<ion-navbar class="coinStatus">
+    <!-- <ion-title class="coinstatusTitle"> -->
+
+    <div class="marquee">
+        <div class="marquee--inner">
+            <span>
+                <ng-container *ngFor='let data of liveData'>
+                    <span class="inline-list">
+                        <span style="line-height: 20px;padding-top: 3px;">
+                            <img src="http://ilhaus.com/dev/valuebit/storage/uploads/user_null/{{data.curr_img}}" />
+                        </span>
+                    </span>
+                    <span class="inline-list" style="padding-left: 10px; padding-right: 10px;">
+                        <span style="line-height: 10px;">
+                            <p>
+                                {{data.curr_code}}/{{general.SelectedCountry.country_fiat || 'USD'}}
+                            </p>
+                            <p>
+                                Buy:{{data.con_buy_price}} | Sell:{{data.con_sell_price}}
+                            </p>
+                        </span>
+                    </span>
+                </ng-container>
+                <ng-container *ngFor='let data of liveData'>
+                    <span class="inline-list">
+                        <span style="line-height: 20px;padding-top: 3px;">
+                            <img src="http://ilhaus.com/dev/valuebit/storage/uploads/user_null/{{data.curr_img}}" />
+                        </span>
+                    </span>
+                    <span class="inline-list" style="padding-left: 10px; padding-right: 10px;">
+                        <span style="line-height: 10px;">
+                            <p>
+                                {{data.curr_code}}/{{general.SelectedCountry.country_fiat || 'USD'}}
+                            </p>
+                            <p>
+                                Buy:{{data.con_buy_price}} | Sell:{{data.con_sell_price}}
+                            </p>
+                        </span>
+                    </span>
+                </ng-container>
+            </span>
+            <!-- <span>
+                    <div class="orb"></div>
+                    <div class="orb red"></div>
+                    <div class="orb yellow"></div>
+                    <div class="orb blue"></div>
+                    <div class="orb orange"></div>
+                    <div class="orb purple"></div>
+                    <div class="orb green"></div>
+                    <div class="orb"></div>
+                </span> -->
+
+        </div>
+    </div>
+    <!-- </ion-title> -->
+</ion-navbar>

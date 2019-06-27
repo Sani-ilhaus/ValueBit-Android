@@ -1,0 +1,26 @@
+kyc-details {    
+    .coinIcon{
+        border-radius: 50%; 
+        height: 4em;
+        width: 4em;
+    }
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+        overflow: visible;
+        color: #000;
+    }
+    .card-content-md{
+        padding: unset;
+    }
+    .fixed-content{
+        background: unset;
+    }
+    .card-md{
+        box-shadow: unset;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .card-ios{
+        box-shadow: unset;
+        border-bottom: 1px solid #ccc;
+    }
+}

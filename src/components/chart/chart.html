@@ -1,0 +1,19 @@
+<!-- Generated template for the ChartComponent component -->
+<ion-row>
+  <ion-col>
+    <h2>{{currName}}</h2>
+    <p>Conversion Rates for 1 {{currName}} according to currencies</p>
+    <div *ngIf="currencyList" class="currencydiv">
+      <ng-container *ngFor="let currency of currencyList">
+        <p>{{currency.name}}:{{currency.value}}</p>
+      </ng-container>
+    </div>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+    <div id="currencyGraphDiv" style="height: 500px;">
+
+    </div>
+  </ion-col>
+</ion-row>

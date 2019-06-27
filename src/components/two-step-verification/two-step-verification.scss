@@ -1,0 +1,111 @@
+two-step-verification {
+  .list-md .item-block .item-inner {
+    border-bottom: unset;
+  }
+
+  .twoSfTitile{
+    text-align: center;
+  }
+
+  .twoSfTitile > div {
+    color: #000;
+  }
+
+  .formInput {
+    border: 4px solid #38bf9a;
+    color: #fff;
+    background-color: #fff;
+    border-radius: 30px;
+    height: 8vh;
+    margin-bottom: 24px;
+  }
+
+  .verifyPinTxt{
+    color: #fff;
+    font-size: 2.4rem;
+    text-align: center;
+    padding-top: 10%;
+
+  }
+
+  .pin {
+    font-size: 3rem;
+    width:100%;
+    outline : none;
+    color : transparent;
+    text-shadow : 0 0 0 #000;
+    text-align: center;
+    letter-spacing: 2rem;
+    padding: inherit;
+  }
+
+  .item-input ion-input, .item-input ion-textarea {
+    border-bottom: 2px solid #488aff;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .item-md {
+    background-color: unset;
+  }
+
+  .list-md .item-input:last-child {
+    border-bottom: unset;
+  }
+
+  .text-input-md {
+    text-align: center;
+  }
+
+  .fixed-content{
+    background: unset !important;
+  }
+
+  .twosfBtn{
+    border-color: #38bf9a;
+    width: 70%;
+    padding: 0;
+    background: #38bf9a;
+    border-radius: 25px !important;
+    // height: 5rem;
+  }
+
+  .cancelBtn{
+    border-color: #fff !important; 
+    background: #ccc;
+    color: #000;
+  }
+
+  .twoPin{
+    border: 1px solid black;
+    margin: 13px 8px;
+    padding: 0;
+    width: calc(100% - 8px - 8px);
+    // border: 4px solid #38bf9a;
+    // color: #fff;
+    background-color: #fff;
+    border-radius: 30px;
+    height: 1.6em;
+    margin-bottom: 24px;
+  }
+
+  .item-input ion-input, .item-input ion-textarea {
+    color: #fff;
+  }
+
+  .list-md .item-input:last-child {
+    border-bottom: unset;
+  }
+  .list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+    border-bottom-color: unset;
+    box-shadow: unset;
+  }
+
+  .list-md .item-input.item-input-has-focus:last-child, .list-md .item-input-has-focus:last-child {
+    border-bottom-color: unset;
+    box-shadow: unset;
+  }
+  .item-md.item-toggle ion-label {
+    color: #fff;
+  }
+}

@@ -1,0 +1,31 @@
+<!-- Generated template for the CopycurrencyaddressmodalComponent component -->
+<div class="modal_content">
+  <ion-card *ngIf="modalData" class="center-img">
+    <ion-card-header no-padding>
+      <button ion-button clear small color="valuebitcolor" class="closeBtn" (click)="CloseModal()">
+        <ion-icon name="close-circle" item-end style="font-size: 2em"></ion-icon>
+      </button>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item text-center>
+        <h1>Your {{modalData.curr_code}} address </h1>
+      </ion-item>
+      <ion-item>
+        <h2>{{modalData.curr_addr}}</h2>
+        <input type="hidden" value="{{modalData.curr_addr}}" id="curr_address" />
+        <!-- <ion-icon name="copy" item-end large (click)="CopyAddress()"></ion-icon> -->
+      </ion-item>
+      <ion-item text-center>
+        <button ion-button small round color="valuebitcolor" (click)="CopyAddress()">
+          <ion-icon name="copy" item-end large></ion-icon> Copy</button>
+      </ion-item>
+      <ion-item text-center>
+        <h1>OR</h1>
+      </ion-item>
+      <ion-item text-center>
+        <canvas id="canvasWalletAddress" height="100" width="100"></canvas>
+      </ion-item>
+    </ion-card-content>
+
+  </ion-card>
+</div>

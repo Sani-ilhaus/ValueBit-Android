@@ -1,0 +1,297 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="navbarAppHead" style="padding-left:4em">CRYPTOCURRENCY HISTORY</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-segment [(ngModel)]="historyData" color="dark">
+    <ion-segment-button value="0" (click)="SelectedTab(0)">
+      SEND
+    </ion-segment-button>
+    <ion-segment-button value="1" (click)="SelectedTab(1)">
+      EXCHANGE
+    </ion-segment-button>
+    <!-- <ion-segment-button value="2" (click)="SelectedTab(2)">
+      SELL
+    </ion-segment-button> -->
+    <ion-segment-button value="2" (click)="SelectedTab(2)">
+      RECEIVE
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  <ion-slides #slider (ionSlideWillChange)="moveButton($event)">
+    <ion-slide>
+      <ion-list *ngIf="historyData == '0' && myhistorydata != undefined && myhistorydata.sendCurrency != undefined" no-lines no-padding>
+        <div *ngFor='let trans of myhistorydata.sendCurrency; let i = index'>
+          <ion-card *ngIf="trans.error ==''">
+            <ion-card-content>
+              <ion-row>
+                <ion-col col-3 class="icon-container btc">
+                  <img class="center-img" [src]="appUtilsHist.SanitizeUrl(this.pnkServiceHist.AssetsUrl+'storage/uploads/user_null/'+selectedCurrencyData.curr_image)">
+                </ion-col>
+                <ion-col col-9>
+                  <div class="outerTransaction">
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div style="font-weight:bolder;">Transaction Id: {{trans.trans_id || 'N/A'}}</div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div>Date: {{trans.created_at || 'N/A'}}</div>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Amount:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.amount || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Status:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span style="text-transform: capitalize">{{trans.status || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                  <!-- <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">TFee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.tx_fees || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Net:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.net_amount || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row> -->
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-list>
+      <div *ngIf="myhistorydata == undefined || myhistorydata.sendCurrency == undefined" style="color:white;">No data availble</div>
+    </ion-slide>
+    <ion-slide>
+      <ion-list *ngIf="historyData == '1' && myhistorydata != undefined && myhistorydata.currencyexchange != undefined">
+        <div *ngFor='let trans of myhistorydata.currencyexchange; let i = index'>
+          <ion-card *ngIf="trans.error ==''">
+            <ion-card-content>
+              <ion-row>
+                <ion-col col-3 class="icon-container btc">
+                  <img class="center-img center-img" [src]="appUtilsHist.SanitizeUrl(this.pnkServiceHist.AssetsUrl+'storage/uploads/user_null/'+selectedCurrencyData.curr_image)">
+                </ion-col>
+                <ion-col col-9>
+                  <div class="outerTransaction">
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div style="font-weight:bolder;">Transaction Id: {{trans.trans_id || 'N/A'}}</div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div>Date: {{trans.created_at || 'N/A'}}</div>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Amount:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.amount || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Status:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span style="text-transform: capitalize">{{trans.status || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                  <!-- <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">TFee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.tx_fees || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Net:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.net_amount || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row> -->
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-list>
+      <div *ngIf=" myhistorydata == undefined || myhistorydata.currencyexchange == undefined" style="color:white;">No data availble</div>
+    </ion-slide>
+    <ion-slide>
+      <ion-list *ngIf="historyData == '2' && myhistorydata != undefined && myhistorydata.sellCurrency != undefined">
+        <div *ngFor='let trans of myhistorydata.sellCuryncy; let i = index'>
+          <ion-card *ngIf="trans.error ==''">
+            <ion-card-content>
+              <ion-row>
+                <ion-col col-3 class="icon-container btc">
+                  <img class="center-img" src="{{pnkServiceHist.AssetsUrl}}storage/uploads/user_null/{{selectedCurrencyData.curr_image}}">
+                </ion-col>
+                <ion-col col-9>
+                  <div class="outerTransaction">
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div style="font-weight:bolder;">Transaction Id: {{trans.id || 'N/A'}}</div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div>Date: {{trans.date || 'N/A'}}</div>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Amount:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.amount || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Fee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.fee || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">TFee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.tx_fees || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Net:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.net_amount || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-list>
+      <div *ngIf=" myhistorydata == undefined || myhistorydata.sellCurrency == undefined ||  myhistorydata.sellCurrency == null"
+        style="color:white;">No data availble</div>
+    </ion-slide>
+    <ion-slide>
+      <ion-list *ngIf="historyData == '3' && myhistorydata != undefined && myhistorydata.receiveCurrency != undefined">
+        <div *ngFor='let trans of myhistorydata.receiveCurrency; let i = index'>
+          <ion-card *ngIf="trans.error ==''">
+            <ion-card-content>
+              <ion-row>
+                <ion-col col-3 class="icon-container btc">
+                  <img class="center-img" [src]="appUtilsHist.SanitizeUrl(this.pnkServiceHist.AssetsUrl+'storage/uploads/user_null/'+selectedCurrencyData.curr_image)">
+                </ion-col>
+                <ion-col col-9>
+                  <div class="outerTransaction">
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div style="font-weight:bolder;">Transaction Id: {{trans.trans_id || 'N/A'}}</div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col class="dataCard">
+                        <div>Date: {{trans.created_at || 'N/A'}}</div>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+                  <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Amount:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.amount || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Status:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span style="text-transform: capitalize">{{trans.status || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                  <!-- <ion-row>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">TFee:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.tx_fees || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col col-6 class="dataCard">
+                      <ion-row>
+                        <span style="font-weight:bolder;">Net:</span>
+                      </ion-row>
+                      <ion-row>
+                        <span>{{trans.net_amount || 'N/A'}}</span>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row> -->
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-list>
+      <div *ngIf=" myhistorydata == undefined || myhistorydata.receiveCurrency == undefined ||  myhistorydata.receiveCurrency == null"
+        style="color:white;">No data availble</div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
